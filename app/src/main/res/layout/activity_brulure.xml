@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lkhedma.firstaid.Brulure">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/flame" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif"
+                android:text="Brulure"
+                android:textColor="@android:color/black"
+                android:textSize="50sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veuillez selectionner les signes observes :"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Zone:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alwaysDrawnWithCache="false"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/orifice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orifice naturel" />
+
+                <RadioButton
+                    android:id="@+id/visage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visage" />
+
+                <RadioButton
+                    android:id="@+id/mains"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mains"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/autres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Autres" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Peau ? :"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/peau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alwaysDrawnWithCache="false"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/peau_rouge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peau rouge"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/cloques"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cloques" />
+
+                <RadioButton
+                    android:id="@+id/peau_noir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peau noir" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Etendu de la brulure:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/etendu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alwaysDrawnWithCache="false"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/inf_paum"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="Inferieur a la paume de l'enfant"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/sup_paum"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="Superieur à la paume de l'enfant" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Cause: "
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alwaysDrawnWithCache="false"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <RadioButton
+                    android:id="@+id/chaleur"
+                    android:layout_width="105dp"
+                    android:layout_height="40dp"
+                    android:text="Chaleur(feu,vapeur)"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/electricite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electricite" />
+
+                <RadioButton
+                    android:id="@+id/chimique"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chimique" />
+
+                <RadioButton
+                    android:id="@+id/liquide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Liquide" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Diagnistiquer"
+            android:onClick="diagnostiquer"
+            android:background="@drawable/button_file"
+            android:gravity="center_horizontal"/>
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

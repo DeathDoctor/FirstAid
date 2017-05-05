@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lkhedma.firstaid.Chute">
+     <LinearLayout
+         android:layout_width="368dp"
+         android:layout_height="495dp"
+         tools:layout_editor_absoluteY="8dp"
+         tools:layout_editor_absoluteX="8dp"
+         android:orientation="vertical">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <ImageView
+                 android:layout_width="match_parent"
+                 android:layout_height="80dp"
+                 android:layout_gravity="center_horizontal"
+                 android:layout_marginTop="0dp"
+                 android:src="@drawable/slide" />
+
+             <TextView
+                 android:id="@+id/textView2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="80dp"
+                 android:layout_gravity="center_horizontal"
+                 android:fontFamily="sans-serif"
+                 android:text="Chute"
+                 android:textColor="@android:color/black"
+                 android:textSize="50sp" />
+
+         </LinearLayout>
+
+         <TextView
+             android:id="@+id/textView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Veuillez selectionner les signes observes :"
+             android:textColor="@android:color/black"
+             android:textSize="17sp" />
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+
+             <LinearLayout
+                 android:layout_width="200dp"
+                 android:layout_height="250dp"
+                 android:layout_weight="1"
+                 android:orientation="vertical">
+
+                 <CheckBox
+                     android:id="@+id/s1"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="membre douloureux" />
+
+                 <CheckBox
+                     android:id="@+id/s2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="membre déformé" />
+
+                 <CheckBox
+                     android:id="@+id/s3"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="articulation douloureuse" />
+
+                 <CheckBox
+                     android:id="@+id/s4"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="articulation déformé et gonflé" />
+
+                 <CheckBox
+                     android:id="@+id/s5"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="fourmillement du membre" />
+
+                 <CheckBox
+                     android:id="@+id/s6"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="trouble de sensibilité" />
+
+                 <CheckBox
+                     android:id="@+id/s7"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="paralysie totale ou partielle" />
+
+
+             </LinearLayout>
+
+             <LinearLayout
+                 android:layout_width="200dp"
+                 android:layout_height="200dp"
+                 android:layout_weight="1"
+                 android:orientation="vertical">
+
+
+                 <CheckBox
+                     android:id="@+id/s8"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="trouble de l'équlibre" />
+
+                 <CheckBox
+                     android:id="@+id/s9"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="plaie ou bosse sur la tete" />
+
+                 <CheckBox
+                     android:id="@+id/s10"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="maux de tete inhabituels" />
+
+                 <CheckBox
+                     android:id="@+id/s11"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="nausée" />
+
+                 <CheckBox
+                     android:id="@+id/s12"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="vomissement" />
+
+                 <CheckBox
+                     android:id="@+id/s13"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="saignement par nez" />
+
+             </LinearLayout>
+         </LinearLayout>
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Diagnistiquer"
+             android:onClick="diagnostiquer"
+             android:background="@drawable/button_file"
+             android:gravity="center_horizontal"/>
+     </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
