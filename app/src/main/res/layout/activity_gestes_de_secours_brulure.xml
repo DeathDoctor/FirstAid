@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lkhedma.firstaid.GestesDeSecoursBrulure">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/type_brulure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="type brulure"
+            android:background="@drawable/button_file"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veuillez suivre les instruction induiqué ci-dessous"/>
+
+        <ListView
+            android:id="@+id/geste_brulure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+
+    </LinearLayout>
+
+</ScrollView>

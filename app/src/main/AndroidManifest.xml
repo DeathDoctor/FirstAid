@@ -19,7 +19,8 @@
         <activity android:name=".ListeAccident" />
         <activity android:name=".NouveauContact" />
         <activity android:name=".Brulure" />
-        <activity android:name=".Chute"></activity>
+        <activity android:name=".Chute" />
+        <activity android:name=".GestesDeSecoursBrulure"></activity>
     </application>
 
 </manifest>
