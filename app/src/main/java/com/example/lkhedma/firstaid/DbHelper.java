@@ -73,7 +73,11 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoAccident("W00 - T19", "Chute", "@drawable/slide", db);
         inserIntoDiagnostique("Brulure grave", "grave", db);
         inserIntoDiagnostique("Brulure simple", "faible", db);
-
+        insertIntoGesteSecour("@drawable/refroidir","Refroidir rapidement les brulures avec l'eau froide(entre 10 et 15 degres) pendant 5mn","Brulure simple",db);
+        insertIntoGesteSecour("@drawable/cloques","Ne pas percer les cloques","Brulure simple",db);
+        insertIntoGesteSecour("@drawable/pansement","Proteger avec un pansement sterile etadhesif","Brulure simple",db);
+        insertIntoGesteSecour("@drawable/vaccin","Vérifiez la vaccination antitanique","Brulure simple",db);
+        insertIntoGesteSecour("@drawable/appeler","Appeler un medecin dans le cas ou les signe suivants apparaissent: forte rougeur, gonflement...","Brulure simple",db);
 
     }
 
@@ -137,11 +141,12 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(FirstAidManager.DiagnostiqueManager.DIAGNOSTIC_TABLE_NAME, null, contentValues);
     }
 
-    public void insertIntoGesteSecour(String description, String icon, String titreDiagnostique, SQLiteDatabase db) {
+    public void insertIntoGesteSecour(String icon, String description, String titreDiagnostique, SQLiteDatabase db) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR, description);
         contentValues.put(FirstAidManager.GesteSecourManager.ICON_GESTE_SECOUR, icon);
+        contentValues.put(FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR, description);
         contentValues.put(FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR, titreDiagnostique);
+        db.insert(FirstAidManager.GesteSecourManager.GESTE_SECOUR_TABLE_NAME, null, contentValues);
     }
 
     public Cursor getAllAccidents(SQLiteDatabase db) {
@@ -151,6 +156,12 @@ public class DbHelper extends SQLiteOpenHelper {
                                 FirstAidManager.AccidentsMangager.NOM_ACCIDENT,
                                 FirstAidManager.AccidentsMangager.ICON_ACCident};
         cursor = db.query(FirstAidManager.AccidentsMangager.ACCIDENTS_TABLE_NAME, projections, null, null, null, null, null);
+        return cursor;
+    }
+
+    public Cursor getGestesDeSecours(SQLiteDatabase db, String requete, String diagnostique) {
+        Cursor cursor;
+        cursor = db.rawQuery(requete, new String[] {diagnostique});
         return cursor;
     }
 

@@ -1,5 +1,6 @@
 package com.example.lkhedma.firstaid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -57,7 +58,7 @@ public class Brulure extends AppCompatActivity {
             }
         }
 
-        if (peauNoir.isChecked() || sup_paum.isChecked() || (orifice.isChecked())) {
+        if (peauNoir.isChecked() || sup_paum.isChecked() || orifice.isChecked() || electricite.isChecked()) {
             diagnostique = "Brulure grave";
 
         } else {
@@ -70,7 +71,13 @@ public class Brulure extends AppCompatActivity {
             }
         }
 
-        Toast.makeText(getBaseContext(),"Il s'agit de : "+diagnostique+" par "+source, Toast.LENGTH_LONG).show();
+        String requete = "SELECT "+FirstAidManager.GesteSecourManager.ICON_GESTE_SECOUR+ ", "+ FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR+ " FROM " +FirstAidManager.GesteSecourManager.GESTE_SECOUR_TABLE_NAME+ " WHERE "+FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR+" = ?";
+        Toast.makeText(getBaseContext(),diagnostique, Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(Brulure.this, GestesDeSecoursBrulure.class);
+        intent.putExtra("diagnostique",diagnostique);
+        intent.putExtra("requete",requete);
+        startActivity(intent);
 
 
    }
