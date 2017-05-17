@@ -68,6 +68,9 @@ public class GesteDeSecoursAdapter extends ArrayAdapter {
         }
 
         GesteSecours gesteSecours = (GesteSecours) this.getItem(position);
+
+
+
         String uri = gesteSecours.getIcon().toString();
         int iconRecource = getContext().getResources().getIdentifier(uri, null, getContext().getPackageName());
 

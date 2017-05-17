@@ -13,6 +13,7 @@ public class Brulure extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("Signes");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brulure);
 

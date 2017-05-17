@@ -74,7 +74,6 @@ public class ListeAccidentAdapter extends ArrayAdapter {
         Accident accident = (Accident) this.getItem(position);
         layoutHandler.id.setText(accident.getId());
         layoutHandler.nom.setText(accident.getNom());
-        //layoutHandler.icon.setText(accident.getIcon());
 
         String uri = accident.getIcon().toString();
         int iconRecource = getContext().getResources().getIdentifier(uri, null, getContext().getPackageName());

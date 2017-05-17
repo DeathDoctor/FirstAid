@@ -20,12 +20,13 @@ public class GestesDeSecoursBrulure extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Gestes de secours");
         setContentView(R.layout.activity_gestes_de_secours_brulure);
         Intent intent = getIntent();
         String requete = intent.getStringExtra("requete");
         String diagnostique = intent.getStringExtra("diagnostique");
         textView = (TextView) findViewById(R.id.txt);
-        textView.setText(requete);
+        textView.setText(diagnostique);
 
         liste = (ListView) findViewById(R.id.geste_brulure);
         dbHelper = new DbHelper(this.getApplicationContext());

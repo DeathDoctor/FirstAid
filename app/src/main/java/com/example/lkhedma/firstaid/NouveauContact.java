@@ -1,6 +1,7 @@
 package com.example.lkhedma.firstaid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class NouveauContact extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("Nouveau contact");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nouveau_contact);
 
@@ -36,21 +38,14 @@ public class NouveauContact extends AppCompatActivity {
         db = new DbHelper(context);
         sqLiteDatabase = db.getWritableDatabase();
         Contact newContact = new Contact(nom.getText().toString(), Integer.parseInt(numero.getText().toString()), specification.getText().toString());
-        db.addNewContact(newContact, sqLiteDatabase);
+        db.insertIntoContacts(newContact, sqLiteDatabase);
         Toast.makeText(getBaseContext(),"Contact ajoute", Toast.LENGTH_LONG).show();
         db.close();
+        Intent intent = new Intent(NouveauContact.this, ContactList.class);
+        startActivity(intent);
     }
 
-    public void essaie(String[] nombre_diagnostic) {
-        String requete;
-        switch (nombre_diagnostic.length){
-            case 1:
-                requete = "SELECT gete_faire WHERE diagnostic = "+nombre_diagnostic[0]+";";
-                break;
-            case 2:
-                requete = "SELECT gete_faire WHERE diagnostic where = "+nombre_diagnostic[0]+" OR  diagnostic = "+nombre_diagnostic[1]+";";
-        }
-    }
+
 
 
 }

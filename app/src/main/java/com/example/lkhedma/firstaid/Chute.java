@@ -13,6 +13,7 @@ public class Chute extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Signes");
         setContentView(R.layout.activity_chute);
     }
 

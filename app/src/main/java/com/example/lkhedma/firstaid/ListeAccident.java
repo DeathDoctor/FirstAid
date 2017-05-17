@@ -23,6 +23,7 @@ public class ListeAccident extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Liste des accidents");
         setContentView(R.layout.activity_liste_accident);
 
         liste = (ListView) findViewById(R.id.liste_accident);
@@ -51,15 +52,23 @@ public class ListeAccident extends AppCompatActivity {
                 TextView tct = (TextView) view.findViewById(R.id.nom_accident);
                 String nomm = tct.getText().toString();
 
-                if(nomm.equals("Brulure")) {
-                    Intent intent = new Intent(ListeAccident.this, Brulure.class);
-                    startActivity(intent);
-                }else {
-                    if (nomm.equals("Chute")) {
-                        Intent intent = new Intent(ListeAccident.this, Chute.class);
-                        startActivity(intent);
-                    }
+                Intent intent = null;
+
+                switch (nomm) {
+                    case "Brulure":
+                        intent = new Intent(ListeAccident.this, Brulure.class);
+                        break;
+
+                    case "Chute":
+                        intent = new Intent(ListeAccident.this, Chute.class);
+                        break;
+
+                    case "Ingestion de produits caustiques":
+                        intent = new Intent(ListeAccident.this, IngestionProduitCaustique.class);
+                        break;
                 }
+                startActivity(intent);
+
                 Log.e("hadi", nomm);
             }
         });

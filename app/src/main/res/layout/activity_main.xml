@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
-        android:layout_height="495dp"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/bckgrnd"
         tools:layout_editor_absoluteX="8dp"
@@ -17,23 +17,34 @@
 
     <LinearLayout
         android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="140dp"
             android:text="First Aid"
             android:textSize="50sp"
             android:gravity="center"/>
 
         <Button
-            android:id="@+id/acc"
+            android:id="@+id/accident"
             android:text="Gestes de secours"
             android:textColor="@color/colorTextNotPressed"
             android:textSize="20sp"
-            android:onClick="acci"
+            android:onClick="accident"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_file"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            />
+        <Button
+            android:text="Guide pour prévention"
+            android:textColor="@color/colorTextNotPressed"
+            android:textSize="20sp"
+            android:onClick="guide"
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:background="@drawable/button_file"
@@ -53,7 +64,7 @@
             />
         <Button
             android:text="Annuaire téléphonique"
-            android:id="@+id/contact"
+            android:onClick="contactL"
             android:textColor="@color/colorTextNotPressed"
             android:textSize="18sp"
             android:layout_width="260dp"

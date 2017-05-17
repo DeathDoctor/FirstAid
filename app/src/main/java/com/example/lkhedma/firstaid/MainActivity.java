@@ -1,41 +1,38 @@
 package com.example.lkhedma.firstaid;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button toListeAccident = (Button) findViewById(R.id.acc);
-        toListeAccident.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListeAccident.class);
-                startActivity(intent);
-            }
-        });
+    }
 
-        Button toContact = (Button) findViewById(R.id.contact);
-        toContact.setOnClickListener(new View.OnClickListener() {
+    public void contactL(View view) {
+        intent = new Intent(MainActivity.this, ContactList.class);
+        startActivity(intent);
+    }
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NouveauContact.class);
-                startActivity(intent);
-            }
-        });
+    public void guide(View view) {
+        intent = new Intent(MainActivity.this, Guide.class);
+        startActivity(intent);
+    }
+
+    public void accident(View view) {
+        intent = new Intent(MainActivity.this, ListeAccident.class);
+        startActivity(intent);
     }
 
     public void brulure(View view){
-        Intent intent = new Intent(MainActivity.this, Brulure.class);
+        intent = new Intent(MainActivity.this, Brulure.class);
         startActivity(intent);
     }
 }

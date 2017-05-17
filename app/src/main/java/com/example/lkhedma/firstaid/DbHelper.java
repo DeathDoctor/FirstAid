@@ -67,10 +67,19 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(CREAT_ACCIDENTS_TABLE);
         db.execSQL(CREAT_DIAGNOSTIQUE_TABLE);
         db.execSQL(CREAT_GESTE_SECOUR_TABLE);
+
+        insertIntoContacts(new Contact("pompiers", 14, "urgence"), db);
+
         insertIntoAccidentEnum("Brulure", db);
         insertIntoAccidentEnum("Chute", db);
+        insertIntoAccidentEnum("Ingestion de produits caustiques", db);
+
+
         insertIntoAccident("T20 - T31", "Brulure", "@drawable/flame", db);
         insertIntoAccident("W00 - T19", "Chute", "@drawable/slide", db);
+        insertIntoAccident("A60 - A80", "Ingestion de produits caustiques", "@drawable/slide", db);
+
+
         inserIntoDiagnostique("Brulure grave", "grave", db);
         inserIntoDiagnostique("Brulure simple", "faible", db);
         insertIntoGesteSecour("@drawable/refroidir","Refroidir rapidement les brulures avec l'eau froide(entre 10 et 15 degres) pendant 5mn","Brulure simple",db);
@@ -79,6 +88,8 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGesteSecour("@drawable/vaccin","Vérifiez la vaccination antitanique","Brulure simple",db);
         insertIntoGesteSecour("@drawable/appeler","Appeler un medecin dans le cas ou les signe suivants apparaissent: forte rougeur, gonflement...","Brulure simple",db);
 
+
+        
     }
 
     @Override
@@ -106,9 +117,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addNewContact(Contact newContact, SQLiteDatabase sqLiteDatabase) {
-
-        sqLiteDatabase = this.getWritableDatabase();
+    public void insertIntoContacts(Contact newContact, SQLiteDatabase sqLiteDatabase) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(FirstAidManager.ContactManager.NOM_CONTACT, newContact.getNom());
@@ -162,6 +171,15 @@ public class DbHelper extends SQLiteOpenHelper {
     public Cursor getGestesDeSecours(SQLiteDatabase db, String requete, String diagnostique) {
         Cursor cursor;
         cursor = db.rawQuery(requete, new String[] {diagnostique});
+        return cursor;
+    }
+
+    public Cursor getAllContacts(SQLiteDatabase db) {
+        Cursor cursor;
+        String[] projections = {FirstAidManager.ContactManager.NOM_CONTACT,
+                                FirstAidManager.ContactManager.NUMERO_CONTACT,
+                                FirstAidManager.ContactManager.SPECIFICATION_CONTACT};
+        cursor = db.query(FirstAidManager.ContactManager.CONTACT_TABLE_NAME, projections, null, null, null, null, null, null);
         return cursor;
     }
 

@@ -20,7 +20,10 @@
         <activity android:name=".NouveauContact" />
         <activity android:name=".Brulure" />
         <activity android:name=".Chute" />
-        <activity android:name=".GestesDeSecoursBrulure"></activity>
+        <activity android:name=".GestesDeSecoursBrulure" />
+        <activity android:name=".IngestionProduitCaustique" />
+        <activity android:name=".ContactList" />
+        <activity android:name=".Guide"></activity>
     </application>
 
 </manifest>
