@@ -49,6 +49,27 @@ public class FirstAidManager {
         public static final String DIAGNOSTIC_GESTE_SECOUR = "titre_diagnostic";
     }
 
+    public static abstract class PreventionAccidentManager {
+
+        public static final String PREVENTION_ACCIDENT_TABLE_NAME = "accident_prevention";
+        public static final String PREVENTION_ACCIDENT_NAME = "nom_accident_prevention";
+        public static final String PREVENTION_ACCIDENT_ICON = "icon_accident_prevention";
+
+    }
+
+    public static abstract class PreventnionInstructionManager {
+
+        public static final String PREVENTION_INSTRUCTION_TABLE_NAME = "prevention_instruction";
+        public static final String PREVENTION_INSTRUCTION_TITLE = "prevention_instruction_titre";
+        public static final String PREVENTION_INSTRUCTION_SUBTITLE = "prevention_instruction_soustitre";
+        public static final String PREVENTION_INSTRUCTION_FIRST_ICON = "prevention_instruction_icon_one";
+        public static final String PREVENTION_INSTRUCTION_SECOND_ICON = "prevention_instruction_icon_two";
+        public static final String PREVENTION_INSTRUCTION_DESCRIPTION = "prevention_instruction_description";
+
+        public static final String PREVENTION_INSTRUCTION_ACCIDENT_NAME = "nom_accident_prevention";
+
+    }
+
 
 
 

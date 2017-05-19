@@ -53,6 +53,27 @@ public class DbHelper extends SQLiteOpenHelper {
             " "+"FOREIGN KEY("+FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR+") REFERENCES "+FirstAidManager.DiagnostiqueManager.DIAGNOSTIC_TABLE_NAME+"("+FirstAidManager.DiagnostiqueManager.TITRE_DIAGNOSTIQUE+")"+
             ");";
 
+    private static final String CREAT_PREVENTION_ACCIDENT_TABLE = "CREATE TABLE "+FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_TABLE_NAME+
+            "("+
+            " "+FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_NAME+" TEXT PRIMARY KEY,"+
+            " "+FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_ICON+" TEXT"+
+            ");";
+
+    private static final String CREAT_PREVENTION_INSTRUCTION = "CREATE TABLE "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_TABLE_NAME+
+            "("+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_TITLE+" TEXT PRIMARY KEY,"+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_SUBTITLE+" TEXT,"+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_FIRST_ICON+" TEXT,"+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_SECOND_ICON+" TEXT,"+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_DESCRIPTION+" TEXT"+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_TITLE+" TEXT,"+
+            " "+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_ACCIDENT_NAME+" TEXT,"+
+            " "+"FOREIGN KEY("+FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_ACCIDENT_NAME+") REFERENCES "+FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_TABLE_NAME+"("+FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_NAME+")"+
+            ");";
+
+
+
+
 
     public DbHelper(Context context){
         super(context, DB_NAME, null, DB_VERSION);
@@ -67,13 +88,39 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(CREAT_ACCIDENTS_TABLE);
         db.execSQL(CREAT_DIAGNOSTIQUE_TABLE);
         db.execSQL(CREAT_GESTE_SECOUR_TABLE);
+        db.execSQL(CREAT_PREVENTION_ACCIDENT_TABLE);
+        db.execSQL(CREAT_PREVENTION_INSTRUCTION);
 
+        Log.e("DB", "All tables created");
         insertIntoContacts(new Contact("pompiers", 14, "urgence"), db);
 
         insertIntoAccidentEnum("Brulure", db);
         insertIntoAccidentEnum("Chute", db);
         insertIntoAccidentEnum("Ingestion de produits caustiques", db);
 
+        insertIntoPreventionAccident("Etouffements", "@drawable/flame", db);
+        insertIntoPreventionAccident("Noyades", "@drawable/flame", db);
+        insertIntoPreventionAccident("Chutes", "@drawable/flame", db);
+        insertIntoPreventionAccident("Brulure", "@drawable/flame", db);
+        insertIntoPreventionAccident("Electrocution", "@drawable/flame", db);
+
+        insertIntoPreventionInstruction(db, "Etouffements", "Les médicaments", "Ne laissez jamais de médicaments à portée de votre enfant","@drawable/etouf1", "@drawable/etouf2",
+                "• Rangez toujours les médicaments dans une armoire en hauteur, fermée à clé.\n" +
+                        "• Ne laissez pas de médicaments dans un sac à main, sur une table... \n " +
+                        "• Respectez toujours les doses de médicaments prescrites par le médecin, les délais entre chaque prise et lisez attentivement les notices d'utilisation." +
+                        "• Ne présentez jamais un médicament comme un bonbon.");
+        insertIntoPreventionInstruction(db, "Etouffements", "Les médicamentss", "Ne laissez jamais de médicaments à portée de votre enfant","@drawable/etouf1", "@drawable/etouf2",
+                "• Rangez toujours les médicaments dans une armoire en hauteur, fermée à clé.\n" +
+                        "• Ne laissez pas de médicaments dans un sac à main, sur une table... \n " +
+                        "• Respectez toujours les doses de médicaments prescrites par le médecin, les délais entre chaque prise et lisez attentivement les notices d'utilisation." +
+                        "• Ne présentez jamais un médicament comme un bonbon.");
+        insertIntoPreventionInstruction(db, "Etouffements", "Les médicamentsss", "Ne laissez jamais de médicaments à portée de votre enfant","@drawable/etouf1", "@drawable/etouf2",
+                "• Rangez toujours les médicaments dans une armoire en hauteur, fermée à clé.\n" +
+                        "• Ne laissez pas de médicaments dans un sac à main, sur une table... \n " +
+                        "• Respectez toujours les doses de médicaments prescrites par le médecin, les délais entre chaque prise et lisez attentivement les notices d'utilisation." +
+                        "• Ne présentez jamais un médicament comme un bonbon.");
+
+        Log.e("table prevention", "element1");
 
         insertIntoAccident("T20 - T31", "Brulure", "@drawable/flame", db);
         insertIntoAccident("W00 - T19", "Chute", "@drawable/slide", db);
@@ -143,6 +190,13 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(FirstAidManager.AccidentsMangager.ACCIDENTS_TABLE_NAME, null, contentValues);
     }
 
+    public void insertIntoPreventionAccident(String nom, String icon, SQLiteDatabase db) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_NAME, nom);
+        contentValues.put(FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_ICON, icon);
+        db.insert(FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_TABLE_NAME, null, contentValues);
+    }
+
     public void inserIntoDiagnostique(String titre, String gravite, SQLiteDatabase db) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(FirstAidManager.DiagnostiqueManager.TITRE_DIAGNOSTIQUE, titre);
@@ -156,6 +210,17 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put(FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR, description);
         contentValues.put(FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR, titreDiagnostique);
         db.insert(FirstAidManager.GesteSecourManager.GESTE_SECOUR_TABLE_NAME, null, contentValues);
+    }
+
+    public void insertIntoPreventionInstruction(SQLiteDatabase db, String nomAccident, String titre, String sousTitre, String icon1, String icon2, String description) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_TITLE, titre);
+        contentValues.put(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_SUBTITLE, sousTitre);
+        contentValues.put(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_FIRST_ICON, icon1);
+        contentValues.put(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_SECOND_ICON, icon2);
+        contentValues.put(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_DESCRIPTION, description);
+        contentValues.put(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_ACCIDENT_NAME, nomAccident);
+        db.insert(FirstAidManager.PreventnionInstructionManager.PREVENTION_INSTRUCTION_TABLE_NAME, null, contentValues);
     }
 
     public Cursor getAllAccidents(SQLiteDatabase db) {
@@ -174,12 +239,26 @@ public class DbHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getPreventionInstructions(SQLiteDatabase db, String requete, String nomAccident) {
+        Cursor cursor;
+        cursor = db.rawQuery(requete, new String[] {nomAccident});
+        return cursor;
+    }
+
     public Cursor getAllContacts(SQLiteDatabase db) {
         Cursor cursor;
         String[] projections = {FirstAidManager.ContactManager.NOM_CONTACT,
                                 FirstAidManager.ContactManager.NUMERO_CONTACT,
                                 FirstAidManager.ContactManager.SPECIFICATION_CONTACT};
-        cursor = db.query(FirstAidManager.ContactManager.CONTACT_TABLE_NAME, projections, null, null, null, null, null, null);
+        cursor = db.query(FirstAidManager.ContactManager.CONTACT_TABLE_NAME, projections, null, null, null, null, FirstAidManager.ContactManager.NOM_CONTACT+" ASC",null);
+        return cursor;
+    }
+
+    public Cursor getAllPreventionAccident(SQLiteDatabase db) {
+        Cursor cursor;
+        String[] projections = {FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_NAME,
+                                FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_ICON};
+        cursor = db.query(FirstAidManager.PreventionAccidentManager.PREVENTION_ACCIDENT_TABLE_NAME, projections, null, null, null, null, null, null);
         return cursor;
     }
 

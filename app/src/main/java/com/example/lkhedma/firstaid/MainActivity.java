@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void guide(View view) {
-        intent = new Intent(MainActivity.this, Guide.class);
+        intent = new Intent(MainActivity.this, PreventionAccidentList.class);
         startActivity(intent);
     }
 

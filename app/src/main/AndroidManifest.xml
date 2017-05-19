@@ -23,7 +23,9 @@
         <activity android:name=".GestesDeSecoursBrulure" />
         <activity android:name=".IngestionProduitCaustique" />
         <activity android:name=".ContactList" />
-        <activity android:name=".Guide"></activity>
+        <activity android:name=".Guide" />
+        <activity android:name=".PreventionAccidentList" />
+        <activity android:name=".PreventionInstructionList"></activity>
     </application>
 
 </manifest>
