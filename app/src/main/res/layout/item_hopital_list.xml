@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="@drawable/item"
+    android:orientation="horizontal"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/list_hopital_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/list_hopital_nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="nom"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/list_hopital_quartier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        android:textColor="@android:color/black"
+        android:layout_alignParentEnd="true"
+        android:text="Quartier :"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/list_hopital_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="num"
+        android:layout_weight="1"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentEnd="true" />
+    </LinearLayout>
+
+</LinearLayout>

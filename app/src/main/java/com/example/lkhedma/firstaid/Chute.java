@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class Chute extends AppCompatActivity {
 
     @Override
@@ -19,7 +17,8 @@ public class Chute extends AppCompatActivity {
 
     public void diagnostiquer(View view) {
 
-        ArrayList<String> listeDiagnistique = new ArrayList<>();
+        Diagnostique titreDiagnostique = new Diagnostique("Pas de traumatisme", "faible");
+        String requeteChute = "Pas de traumatisme";
 
         CheckBox s1 = (CheckBox) findViewById(R.id.s1);
         CheckBox s2 = (CheckBox) findViewById(R.id.s2);
@@ -36,55 +35,56 @@ public class Chute extends AppCompatActivity {
         CheckBox s13 = (CheckBox) findViewById(R.id.s13);
 
 
-            if (s1.isChecked() && s2.isChecked()){
-                listeDiagnistique.add("fracture deplacee");
+        if (s3.isChecked() || s2.isChecked() || s3.isChecked()){
+            requeteChute = "Traumatisme du membre";
+            if (s1.isChecked()){
+                titreDiagnostique.setNom("Fracture non déplacée");
+                titreDiagnostique.setGravite("faible");
+
             } else {
-                if (s1.isChecked() && (s2.isChecked() == false)) {
-                    listeDiagnistique.add("fracture non déplacee");
+                if (s2.isChecked()) {
+
+                    titreDiagnostique = new Diagnostique("Fracture déplacée", "faible");
                 } else {
-                    if ((s1.isChecked() == false) && s2.isChecked()) {
-                        listeDiagnistique.add("fracture deplacee");
+                    if (s3.isChecked()){
+
+                        titreDiagnostique = new Diagnostique("Entorse", "faible");
                     }
                 }
             }
-             if (s5.isChecked() || s6.isChecked() || s7.isChecked() || s8.isChecked()) {
-                 listeDiagnistique.add("fracture vertebrale");
-             }
-             if (s9.isChecked() || s10.isChecked() || s11.isChecked() || s12.isChecked() || s13.isChecked()) {
-                 listeDiagnistique.add("traumatisme cranien");
-             }
-
-             if ((!s1.isChecked() &&
-                     !s2.isChecked() &&
-                     !s3.isChecked() &&
-                     !s4.isChecked() &&
-                     !s5.isChecked() &&
-                     !s6.isChecked() &&
-                     !s7.isChecked() &&
-                     !s8.isChecked() &&
-                     !s9.isChecked() &&
-                     !s10.isChecked() &&
-                     !s11.isChecked() &&
-                     !s12.isChecked() &&
-                     !s13.isChecked())) {
-                 listeDiagnistique.add("Pas de trumatisme");
-             }
-
-
-        switch (listeDiagnistique.size()){
-            case 1:
-                Toast.makeText(getBaseContext(),listeDiagnistique.get(0), Toast.LENGTH_LONG).show();
-                break;
-
-            case 2:
-                Toast.makeText(getBaseContext(),listeDiagnistique.get(0)+" "+listeDiagnistique.get(1), Toast.LENGTH_LONG).show();
-                break;
-            case 3:
-                Toast.makeText(getBaseContext(),listeDiagnistique.get(0)+" "+listeDiagnistique.get(1)+" "+listeDiagnistique.get(2), Toast.LENGTH_LONG).show();
-                break;
-            default:
-                break;
         }
+        if (s4.isChecked()) {
+            requeteChute = "Traumatisme du membre (luxation)";
+            titreDiagnostique = new Diagnostique("Luxation", "faible");
+        }
+
+        if (s5.isChecked() || s6.isChecked() || s7.isChecked() || s8.isChecked()) {
+            requeteChute = "Fracture vertébrale";
+            titreDiagnostique = new Diagnostique("Fracture vertébrale", "grave");
+
+        }
+
+        if (s9.isChecked() || s10.isChecked() || s11.isChecked() || s12.isChecked() || s13.isChecked()) {
+            requeteChute = "Traumatisme cranien ";
+            titreDiagnostique = new Diagnostique("Traumatisme cranien", "grave");
+        }
+//        if ((!s1.isChecked() &&
+//                     !s2.isChecked() &&
+//                     !s3.isChecked() &&
+//                     !s4.isChecked() &&
+//                     !s5.isChecked() &&
+//                     !s6.isChecked() &&
+//                     !s7.isChecked() &&
+//                     !s8.isChecked() &&
+//                     !s9.isChecked() &&
+//                     !s10.isChecked() &&
+//                     !s11.isChecked() &&
+//                     !s12.isChecked() &&
+//                     !s13.isChecked())) {
+//            titreDiagnostique = new Diagnostique("Pas de traumatisme", "grave");
+//             }
+
+        Toast.makeText(getBaseContext(), "titre :"+titreDiagnostique.nom+" \n"+requeteChute, Toast.LENGTH_LONG).show();
 
     }
 }

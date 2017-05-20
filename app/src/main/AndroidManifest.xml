@@ -25,7 +25,8 @@
         <activity android:name=".ContactList" />
         <activity android:name=".Guide" />
         <activity android:name=".PreventionAccidentList" />
-        <activity android:name=".PreventionInstructionList"></activity>
+        <activity android:name=".PreventionInstructionList" />
+        <activity android:name=".HopitauxListe"></activity>
     </application>
 
 </manifest>

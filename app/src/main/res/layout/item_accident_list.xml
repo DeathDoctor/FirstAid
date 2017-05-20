@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:orientation="horizontal"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:background="@drawable/item3">
 
     <ImageView
         android:id="@+id/icon_accident"

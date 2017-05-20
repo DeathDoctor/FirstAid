@@ -10,4 +10,5 @@
     <color name="colorTextPressed">#FFFFFF</color>
     <color name="colorButtonPressed">#2E75C7</color>
     <color name="colorButtonNotPressed">#FFFFFF</color>
+    <color name="preventionBackground">#81D4FA</color>
 </resources>

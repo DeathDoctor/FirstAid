@@ -70,6 +70,20 @@ public class FirstAidManager {
 
     }
 
+    public static abstract class HopitalManager {
+
+        public static final String HOPITAL_TABLE_NAME = "hopital";
+        public static final String HOPITAL_NAME = "nom_hopital";
+        public static final String HOPITAL_PHOTO = "photo_hopital";
+        public static final String HOPITAL_WILAYA = "wilaya_hopital";
+        public static final String HOPITAL_QUARTIER = "quartier_hopital";
+        public static final String HOPITAL_NUMERO = "numero_hopital";
+        public static final String HOPITAL_SITE = "site_hopital";
+        public static final String HOPITAL_LAT = "lat_hopital";
+        public static final String HOPITAL_LONG = "long_hopital";
+
+    }
+
 
 
 

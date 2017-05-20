@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void brulure(View view){
-        intent = new Intent(MainActivity.this, Brulure.class);
+    public void carte(View view){
+        intent = new Intent(MainActivity.this, HopitauxListe.class);
         startActivity(intent);
     }
 }

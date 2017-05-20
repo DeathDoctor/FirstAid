@@ -4,30 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lkhedma.firstaid.Chute">
+    tools:context="com.example.lkhedma.firstaid.Chute"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
      <LinearLayout
-         android:layout_width="368dp"
-         android:layout_height="495dp"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
          tools:layout_editor_absoluteY="8dp"
          tools:layout_editor_absoluteX="8dp"
-         android:orientation="vertical">
+         android:orientation="vertical"
+         android:padding="4dp">
 
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:orientation="vertical">
+             android:orientation="vertical"
+             android:layout_weight="1"
+             android:background="@drawable/item"
+             android:padding="16dp">
 
              <ImageView
                  android:layout_width="match_parent"
                  android:layout_height="80dp"
                  android:layout_gravity="center_horizontal"
-                 android:layout_marginTop="0dp"
                  android:src="@drawable/slide" />
 
              <TextView
                  android:id="@+id/textView2"
                  android:layout_width="wrap_content"
-                 android:layout_height="80dp"
+                 android:layout_height="wrap_content"
                  android:layout_gravity="center_horizontal"
                  android:fontFamily="sans-serif"
                  android:text="Chute"
@@ -42,116 +49,149 @@
              android:layout_height="wrap_content"
              android:text="Veuillez selectionner les signes observes :"
              android:textColor="@android:color/black"
-             android:textSize="17sp" />
+             android:layout_marginBottom="8dp"
+             android:textSize="17sp"
+             android:layout_marginTop="8dp"
+             android:layout_weight="1"/>
 
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:orientation="horizontal">
+             android:orientation="horizontal"
+             android:background="@drawable/item"
+             android:layout_weight="1"
+             android:layout_marginBottom="4dp">
 
              <LinearLayout
                  android:layout_width="200dp"
-                 android:layout_height="250dp"
+                 android:layout_height="wrap_content"
                  android:layout_weight="1"
-                 android:orientation="vertical">
+                 android:orientation="vertical"
+                 android:paddingTop="4dp"
+                 android:paddingBottom="4dp">
 
                  <CheckBox
                      android:id="@+id/s1"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
+                     android:textSize="16sp"
                      android:text="membre douloureux" />
 
                  <CheckBox
                      android:id="@+id/s2"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
+                     android:textSize="16sp"
                      android:text="membre déformé" />
 
                  <CheckBox
                      android:id="@+id/s3"
                      android:layout_width="wrap_content"
+                     android:textSize="16sp"
                      android:layout_height="wrap_content"
-                     android:text="articulation douloureuse" />
+                     android:text="articulation douloureuse"
+                     android:layout_marginBottom="4dp"/>
 
                  <CheckBox
                      android:id="@+id/s4"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="articulation déformé et gonflé" />
+                     android:text="articulation déformé et gonflé"
+                     android:textSize="16sp"
+                     android:layout_marginBottom="4dp"/>
 
                  <CheckBox
                      android:id="@+id/s5"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="fourmillement du membre" />
+                     android:text="fourmillement du membre"
+                     android:textSize="16sp"
+                     />
 
                  <CheckBox
                      android:id="@+id/s6"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="trouble de sensibilité" />
+                     android:text="trouble de sensibilité"
+                     android:textSize="16sp"/>
 
                  <CheckBox
                      android:id="@+id/s7"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="paralysie totale ou partielle" />
+                     android:text="paralysie totale ou partielle"
+                     android:textSize="16sp"/>
 
 
              </LinearLayout>
 
              <LinearLayout
                  android:layout_width="200dp"
-                 android:layout_height="200dp"
+                 android:layout_height="wrap_content"
                  android:layout_weight="1"
-                 android:orientation="vertical">
+                 android:orientation="vertical"
+                 android:layout_gravity="right"
+                 android:paddingTop="4dp"
+                 android:paddingBottom="4dp">
 
 
                  <CheckBox
                      android:id="@+id/s8"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="trouble de l'équlibre" />
+                     android:text="trouble de l'équlibre"
+                     android:textSize="16sp"/>
 
                  <CheckBox
                      android:id="@+id/s9"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="plaie ou bosse sur la tete" />
+                     android:text="plaie ou bosse sur la tete"
+                     android:textSize="16sp"
+                     android:layout_marginBottom="4dp"/>
 
                  <CheckBox
                      android:id="@+id/s10"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="maux de tete inhabituels" />
+                     android:text="maux de tete inhabituels"
+                     android:textSize="16sp"
+                     android:layout_marginBottom="4dp"/>
 
                  <CheckBox
                      android:id="@+id/s11"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="nausée" />
+                     android:text="nausée"
+                     android:textSize="16sp"/>
 
                  <CheckBox
                      android:id="@+id/s12"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="vomissement" />
+                     android:text="vomissement"
+                     android:textSize="16sp"/>
 
                  <CheckBox
                      android:id="@+id/s13"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="saignement par nez" />
+                     android:text="saignement par nez"
+                     android:textSize="16sp"/>
 
              </LinearLayout>
          </LinearLayout>
          <Button
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="Diagnistiquer"
              android:onClick="diagnostiquer"
+             android:layout_marginTop="4dp"
+             android:layout_width="260dp"
+             android:layout_height="60dp"
+             android:text="Diagnostiquer"
+             android:textStyle="bold"
+             android:textSize="20sp"
              android:background="@drawable/button_file"
-             android:gravity="center_horizontal"/>
+             android:layout_gravity="center_horizontal"
+             android:layout_weight="1"/>
      </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

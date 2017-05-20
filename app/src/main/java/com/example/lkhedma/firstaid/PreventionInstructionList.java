@@ -30,7 +30,7 @@ public class PreventionInstructionList extends AppCompatActivity {
         preventionInstructionAdapter = new PreventionInstructionAdapter(this.getApplicationContext(), R.layout.item_prevention_instruction);
         liste.setAdapter(preventionInstructionAdapter);
         sqLiteDatabase = dbHelper.getReadableDatabase();
-        cursor = dbHelper.getPreventionInstructions(sqLiteDatabase, requete, "Etouffements");
+        cursor = dbHelper.getPreventionInstructions(sqLiteDatabase, requete, nomAccident);
 
         if (cursor.moveToNext()) {
             do {
