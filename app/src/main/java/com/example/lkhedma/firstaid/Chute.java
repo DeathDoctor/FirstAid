@@ -1,10 +1,10 @@
 package com.example.lkhedma.firstaid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 public class Chute extends AppCompatActivity {
 
@@ -17,8 +17,8 @@ public class Chute extends AppCompatActivity {
 
     public void diagnostiquer(View view) {
 
-        Diagnostique titreDiagnostique = new Diagnostique("Pas de traumatisme", "faible");
-        String requeteChute = "Pas de traumatisme";
+        Diagnostique diagnostique = new Diagnostique("Pas de traumatisme", "faible");
+
 
         CheckBox s1 = (CheckBox) findViewById(R.id.s1);
         CheckBox s2 = (CheckBox) findViewById(R.id.s2);
@@ -35,38 +35,43 @@ public class Chute extends AppCompatActivity {
         CheckBox s13 = (CheckBox) findViewById(R.id.s13);
 
 
-        if (s3.isChecked() || s2.isChecked() || s3.isChecked()){
-            requeteChute = "Traumatisme du membre";
-            if (s1.isChecked()){
-                titreDiagnostique.setNom("Fracture non déplacée");
-                titreDiagnostique.setGravite("faible");
+        if (s3.isChecked() || s2.isChecked() || s1.isChecked()){
+            if (s3.isChecked()){
+
+                diagnostique.setNom("Entorse");
+                diagnostique.setGravite("faible");
 
             } else {
                 if (s2.isChecked()) {
 
-                    titreDiagnostique = new Diagnostique("Fracture déplacée", "faible");
-                } else {
-                    if (s3.isChecked()){
+                    diagnostique.setNom("Fracture déplacée");
+                    diagnostique.setGravite("faible");
 
-                        titreDiagnostique = new Diagnostique("Entorse", "faible");
+                } else {
+
+                    if (s1.isChecked()){
+                        diagnostique.setNom("Fracture non déplacée");
+                        diagnostique.setGravite("faible");
+
+
                     }
                 }
             }
         }
         if (s4.isChecked()) {
-            requeteChute = "Traumatisme du membre (luxation)";
-            titreDiagnostique = new Diagnostique("Luxation", "faible");
+            diagnostique.setNom("Luxation");
+            diagnostique.setGravite("faible");
         }
 
         if (s5.isChecked() || s6.isChecked() || s7.isChecked() || s8.isChecked()) {
-            requeteChute = "Fracture vertébrale";
-            titreDiagnostique = new Diagnostique("Fracture vertébrale", "grave");
+            diagnostique.setNom("Fracture vertébrale");
+            diagnostique.setGravite("grave");
 
         }
 
         if (s9.isChecked() || s10.isChecked() || s11.isChecked() || s12.isChecked() || s13.isChecked()) {
-            requeteChute = "Traumatisme cranien ";
-            titreDiagnostique = new Diagnostique("Traumatisme cranien", "grave");
+            diagnostique.setNom("Traumatisme cranien");
+            diagnostique.setGravite("grave");
         }
 //        if ((!s1.isChecked() &&
 //                     !s2.isChecked() &&
@@ -81,10 +86,16 @@ public class Chute extends AppCompatActivity {
 //                     !s11.isChecked() &&
 //                     !s12.isChecked() &&
 //                     !s13.isChecked())) {
-//            titreDiagnostique = new Diagnostique("Pas de traumatisme", "grave");
+//            Diagnostique = new Diagnostique("Pas de traumatisme", "grave");
 //             }
 
-        Toast.makeText(getBaseContext(), "titre :"+titreDiagnostique.nom+" \n"+requeteChute, Toast.LENGTH_LONG).show();
+        //String requeteCH = "SELECT "+FirstAidManager.GesteSecourManager.ICON_GESTE_SECOUR+ ", "+ FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR+ " FROM " +FirstAidManager.GesteSecourManager.GESTE_SECOUR_TABLE_NAME+ " WHERE "+FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR+" = ?";
+
+        //Toast.makeText(getBaseContext(), "titre :"+Diagnostique.nom+" \n"+requete, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(Chute.this, GestesDeSecours.class);
+        intent.putExtra("diagnostiqueAccident",diagnostique.getNom().toString());
+        intent.putExtra("gravite", diagnostique.getGravite().toString());
+        startActivity(intent);
 
     }
 }

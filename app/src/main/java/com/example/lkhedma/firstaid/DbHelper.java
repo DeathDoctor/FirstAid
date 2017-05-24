@@ -110,13 +110,14 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoAccidentEnum("Brulure", db);
         insertIntoAccidentEnum("Chute", db);
         insertIntoAccidentEnum("Ingestion de produits caustiques", db);
+        insertIntoAccidentEnum("Inhalation", db);
 
-        insertIntoPreventionAccident("Etouffements", "@drawable/flame", db);
-        insertIntoPreventionAccident("Noyades", "@drawable/flame", db);
-        insertIntoPreventionAccident("Chutes", "@drawable/flame", db);
+        insertIntoPreventionAccident("Etouffements", "@drawable/icon_inhalation", db);
+        insertIntoPreventionAccident("Noyades", "@drawable/icon_noyade", db);
+        insertIntoPreventionAccident("Chutes", "@drawable/slide", db);
         insertIntoPreventionAccident("Brulures", "@drawable/flame", db);
-        insertIntoPreventionAccident("Electrocutions", "@drawable/flame", db);
-        insertIntoPreventionAccident("Intoxications", "@drawable/flame", db);
+        insertIntoPreventionAccident("Electrocutions", "@drawable/icon_electrocution", db);
+        insertIntoPreventionAccident("Intoxications", "@drawable/icon_intox", db);
 
 
         // AJOUT DES PREVENTIONS POUR ETOUFFEMENTS
@@ -271,19 +272,76 @@ public class DbHelper extends SQLiteOpenHelper {
 
         insertIntoAccident("T20 - T31", "Brulure", "@drawable/flame", db);
         insertIntoAccident("W00 - T19", "Chute", "@drawable/slide", db);
-        insertIntoAccident("A60 - A80", "Ingestion de produits caustiques", "@drawable/slide", db);
+        insertIntoAccident("A60 - A80", "Ingestion de produits caustiques", "@drawable/icon_ingestion", db);
+        insertIntoAccident("S80 - S96", "Inhalation", "@drawable/icon_inhalation", db);
 
 
         inserIntoDiagnostique("Brulure grave", "grave", db);
         inserIntoDiagnostique("Brulure simple", "faible", db);
+
+        inserIntoDiagnostique("Traumatisme du membre", "faible", db);
+        inserIntoDiagnostique("Traumatisme du membre (luxation)", "faible", db);
+        inserIntoDiagnostique("Fracture vertébrale", "grave", db);
+        inserIntoDiagnostique("Traumatisme cranien", "grave", db);
+
+        inserIntoDiagnostique("Ingestion de produits caustiques", "faible", db);
+
+        inserIntoDiagnostique("Enfant tousse", "faible", db);
+        inserIntoDiagnostique("Enfant ne respire pas", "grave", db);
+
         insertIntoGesteSecour("@drawable/refroidir","Refroidir rapidement les brulures avec l'eau froide(entre 10 et 15 degres) pendant 5mn","Brulure simple",db);
         insertIntoGesteSecour("@drawable/cloques","Ne pas percer les cloques","Brulure simple",db);
         insertIntoGesteSecour("@drawable/pansement","Proteger avec un pansement sterile etadhesif","Brulure simple",db);
         insertIntoGesteSecour("@drawable/vaccin","Vérifiez la vaccination antitanique","Brulure simple",db);
         insertIntoGesteSecour("@drawable/appeler","Appeler un medecin dans le cas ou les signe suivants apparaissent: forte rougeur, gonflement...","Brulure simple",db);
 
+        insertIntoGesteSecour("@drawable/refroidir","Arroser rapidement à l’eau froide (10 et 15 degré) pendant 5 mn","Brulure grave",db);
+        insertIntoGesteSecour("@drawable/retirer_vetement","Retirer les vêtements de l’enfant sans arracher ceux qui collent à la peau","Brulure grave",db);
+        insertIntoGesteSecour("@drawable/allonger_enfant","Allonger l’enfant sur un drap propre","Brulure grave",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours","Brulure grave",db);
+        insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration, le pouls, jusqu’à l’arrivée des secours. ","Brulure grave",db);
 
-        
+        insertIntoGesteSecour("@drawable/immobiliser_fracture","Immobiliser ou empêcher de bouger : \n  Membre inférieur : caler le membre avec des vêtements, couverture, coussin dans la position où il se trouve","Traumatisme du membre",db);
+        insertIntoGesteSecour("@drawable/membre_inf","Membre supérieur : caler à l’aide de vêtement, triangle de toile voir figures ","Traumatisme du membre",db);
+        insertIntoGesteSecour("@drawable/compression","En cas de fracture ouverte recouvrir la plaie avec des compresses stériles ","Traumatisme du membre",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours : pour réaliser une radiographie","Traumatisme du membre",db);
+        insertIntoGesteSecour("@drawable/suveillez_enfant","Surveiller l’enfant en attendant","Traumatisme du membre",db);
+
+        insertIntoGesteSecour("@drawable/pas_remettre_fracture","Ne jamais essayer de remettre en place l'articulation luxée, car on peut provoquer des lésions irréversibles. \n Immobiliser l'articulation dans la position où elle se trouve","Traumatisme du membre (luxation)",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours : pour réaliser une radiographie ","Traumatisme du membre (luxation)",db);
+        insertIntoGesteSecour("@drawable/suveillez_enfant","Surveiller l’enfant en attendant","Traumatisme du membre (luxation)",db);
+
+        insertIntoGesteSecour("@drawable/chute_tete","Maintenez le blessé immobile et, aussi rapidement que possible, tenez sa tête en posant vos mains à plat de chaque côté. Grâce à ce maintien on évite tout mouvement de la colonne. De plus, la rectitude de l'axe tête-cou-tronc droit est ainsi conservée","Fracture vertébrale",db);
+        insertIntoGesteSecour("@drawable/suveillez_enfant","Surveillez l’enfant jusqu'à l'arrivée des secours et prêtez attention à d'éventuels signes de gravité. ","Fracture vertébrale",db);
+        insertIntoGesteSecour("@drawable/pls","En cas d'inconscience, positionnez prudemment la victime en position latérale de sécurité, malgré le risque de traumatisme liée à cette situation délicate","Fracture vertébrale",db);
+
+        insertIntoGesteSecour("@drawable/allonger","Mettre la victime au repos en position allongée","Traumatisme cranien",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours","Traumatisme cranien",db);
+        insertIntoGesteSecour("@drawable/pls","surveiller la conscience ; si la victime devient inconsciente, la mettre en position latérale de sécurité à condition que la respiration reste efficace","Traumatisme cranien",db);
+
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours","Ingestion de produits caustiques",db);
+        insertIntoGesteSecour("@drawable/pas_vomir","Ne pas faire boire","Ingestion de produits caustiques",db);
+        insertIntoGesteSecour("@drawable/pas_boire","Ne pas faire vomir","Ingestion de produits caustiques",db);
+        insertIntoGesteSecour("@drawable/pas_medicament","Ne pas donner d’antidotes\n" +
+                "Ni de pansement gastrique\n" +
+                "ou faire lavage gastrique ","Ingestion de produits caustiques",db);
+        insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration et le pouls, jusqu’à l’arrivée des secours","Ingestion de produits caustiques",db);
+
+
+        insertIntoGesteSecour("@drawable/bouche_enfant","ne pas suspendre l’enfant par les pieds \n ne pas introduire les doigts dans la bouche de l’enfant ","Enfant tousse",db);
+
+        insertIntoGesteSecour("@drawable/assise_debout","si l’objet est bloqué, conduire l’enfant en position assise ou debout au service d’urgence le plus proche. ","Enfant tousse",db);
+
+
+        insertIntoGesteSecour("@drawable/appeler","Appeler le SAMU","Enfant ne respire pas",db);
+        insertIntoGesteSecour("@drawable/les_tapes","Essayer la méthode des claques dans le dos \n Placer le bébé à plat sur les genoux du sauveteur en lui soutenant la tête \n Donner 5 tapes avec la main entre les omoplates de façon à mobiliser le corps étranger ","Enfant ne respire pas",db);
+        insertIntoGesteSecour("@drawable/heimlich","En cas d’échec de l’expulsion, appliquer immédiatement la méthode de Heimlich : \n Placer la main sur le dos du bébé et le retourner, tête basse en la soutenant. \n Effectuer avec 3 doigts 4 poussés, ou pressions sur le devant du thorax au milieu de setrum. ","Enfant ne respire pas",db);
+
+
+
+
+
+
     }
 
     @Override
@@ -394,7 +452,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor geetAllHospitals(SQLiteDatabase db) {
+    public Cursor getAllHospitals(SQLiteDatabase db) {
         Cursor cursor;
         String[] projections = {FirstAidManager.HopitalManager.HOPITAL_PHOTO,
                                 FirstAidManager.HopitalManager.HOPITAL_NAME,
@@ -407,6 +465,12 @@ public class DbHelper extends SQLiteOpenHelper {
     public Cursor getGestesDeSecours(SQLiteDatabase db, String requete, String diagnostique) {
         Cursor cursor;
         cursor = db.rawQuery(requete, new String[] {diagnostique});
+        return cursor;
+    }
+
+    public Cursor getHospitalInformations(SQLiteDatabase db, String requete, String nomHopital) {
+        Cursor cursor;
+        cursor = db.rawQuery(requete, new String[] {nomHopital});
         return cursor;
     }
 

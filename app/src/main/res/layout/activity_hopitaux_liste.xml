@@ -13,6 +13,8 @@
         android:orientation="horizontal">
 
         <TextView
+            android:textStyle="bold"
+            android:paddingLeft="4dp"
             android:text="Choisissez la wilaya: "
             android:textColor="@color/black"
             android:layout_width="wrap_content"

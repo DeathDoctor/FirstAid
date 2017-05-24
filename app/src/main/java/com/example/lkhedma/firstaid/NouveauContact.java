@@ -32,6 +32,7 @@ public class NouveauContact extends AppCompatActivity {
         specification = (EditText) findViewById(R.id.specification_contact);
 
 
+
     }
 
     public void addContact(View view) {
@@ -43,6 +44,8 @@ public class NouveauContact extends AppCompatActivity {
         db.close();
         Intent intent = new Intent(NouveauContact.this, ContactList.class);
         startActivity(intent);
+
+        finish();
     }
 
 

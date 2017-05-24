@@ -77,7 +77,7 @@ public class HopitauxListeAdapter extends ArrayAdapter {
         layoutHandler.icon.setImageDrawable(res);
 
         layoutHandler.nom.setText(hopital.getNom());
-        layoutHandler.quartier.setText("Quartierb : "+hopital.getQuartier());
+        layoutHandler.quartier.setText("Quartier : "+hopital.getQuartier());
         layoutHandler.numero.setText(hopital.getNumero());
 
         return row;

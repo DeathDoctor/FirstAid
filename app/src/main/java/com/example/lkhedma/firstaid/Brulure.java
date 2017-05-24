@@ -25,6 +25,7 @@ public class Brulure extends AppCompatActivity {
 
         String diagnostique = "Brulure simple";
         String source;
+        String gravite = "faible";
 
 
         RadioButton orifice = (RadioButton) findViewById(R.id.orifice);
@@ -61,23 +62,27 @@ public class Brulure extends AppCompatActivity {
 
         if (peauNoir.isChecked() || sup_paum.isChecked() || orifice.isChecked() || electricite.isChecked()) {
             diagnostique = "Brulure grave";
+            gravite = "grave";
 
         } else {
             if((peauRouge.isChecked() && inf_paum.isChecked()) && (autres.isChecked() || visage.isChecked())){
                 diagnostique = "Brulure simple";
+                gravite = "faible";
             }else {
                 if (cloques.isChecked() && (inf_paum.isChecked() && autres.isChecked())){
                     diagnostique = "Brulure simple";
+                    gravite = "faible";
                 }
             }
         }
 
-        String requete = "SELECT "+FirstAidManager.GesteSecourManager.ICON_GESTE_SECOUR+ ", "+ FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR+ " FROM " +FirstAidManager.GesteSecourManager.GESTE_SECOUR_TABLE_NAME+ " WHERE "+FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR+" = ?";
+        //String requete = "SELECT "+FirstAidManager.GesteSecourManager.ICON_GESTE_SECOUR+ ", "+ FirstAidManager.GesteSecourManager.DESCRIPTION_GESTE_SECOUR+ " FROM " +FirstAidManager.GesteSecourManager.GESTE_SECOUR_TABLE_NAME+ " WHERE "+FirstAidManager.GesteSecourManager.DIAGNOSTIC_GESTE_SECOUR+" = ?";
         Toast.makeText(getBaseContext(),diagnostique, Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(Brulure.this, GestesDeSecoursBrulure.class);
-        intent.putExtra("diagnostique",diagnostique);
-        intent.putExtra("requete",requete);
+        Intent intent = new Intent(Brulure.this, GestesDeSecours.class);
+        intent.putExtra("diagnostiqueAccident",diagnostique);
+        //intent.putExtra("requeteGestesSecours",requete);
+        intent.putExtra("gravite", gravite);
         startActivity(intent);
 
 

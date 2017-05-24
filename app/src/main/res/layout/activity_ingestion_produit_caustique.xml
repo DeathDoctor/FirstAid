@@ -4,145 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lkhedma.firstaid.IngestionProduitCaustique">
+    tools:context="com.example.lkhedma.firstaid.IngestionProduitCaustique"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="4dp"
         tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/item"
+            android:padding="16dp"
+            android:layout_weight="1">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="0dp"
-                android:src="@drawable/slide" />
+                android:src="@drawable/flame"
+                android:layout_marginBottom="16dp"/>
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="sans-serif"
-                android:gravity="center"
                 android:text="Ingestion de produits caustiques"
+                android:gravity="center"
                 android:textColor="@android:color/black"
                 android:textSize="30sp" />
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veuillez selectionner les signes observes :"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp"
+            android:textSize="17sp"
+            android:layout_marginTop="8dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/item"
+            android:layout_marginBottom="4dp"
+            android:padding="6dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal">
 
-        <RadioGroup
+            <RadioGroup
+                android:id="@+id/group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:layout_marginBottom="4dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:layout_weight="1">
 
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="250dp"
+                <RadioButton
+                    android:id="@+id/acide_fort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Esprit de sel, liquide de batterie, détartrant WC, antirouille ou désinfectant"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:textSize="16sp"
+                    android:layout_marginBottom="6dp"
+                    android:checked="true"/>
 
-
-                    <RadioButton
-                        android:id="@+id/ipc1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Esprit de sel"/>
-
-                    <RadioButton
-                        android:id="@+id/ipc2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Luiquide de batterie"/>
-
-                    <RadioButton
-                        android:id="@+id/ipc3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Détartant WC"/>
-
-                    <RadioButton
-                        android:id="@+id/ipc4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Antirouille"/>
-                    <RadioButton
-                        android:id="@+id/ipc5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Désinfectant"/>
-                    <RadioButton
-                        android:id="@+id/ipc6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Déboucheur"/>
-                    <RadioButton
-                        android:id="@+id/ipc7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pile Bouton"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                <RadioButton
+                    android:id="@+id/base_forte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eau de javel, agent de blanchissemment ou lessive pour machine à laver la vaisselle"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:textSize="16sp"
+                    android:layout_marginBottom="6dp"/>
 
-                    <RadioButton
-                        android:id="@+id/ipc8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Détergent ménager"/>
+                <RadioButton
+                    android:id="@+id/acide_faible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Déboucheurs,  Pile bouton ou Détergent ménager"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="6dp"/>
 
-                    <RadioButton
-                        android:id="@+id/ipc9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Eau de javel"/>
+                <RadioButton
+                    android:id="@+id/autres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Autres"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="6dp"/>
 
-                    <RadioButton
-                        android:id="@+id/ipc10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Agent de blanchiment"/>
+            </RadioGroup>
 
-                    <RadioButton
-                        android:id="@+id/ipc11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Eau de javel"/>
-                    <RadioButton
-                        android:id="@+id/ipc12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lessive pour machine à laver"/>
-                    <RadioButton
-                        android:id="@+id/ipc13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Autres"/>
+        </LinearLayout>
 
-                </LinearLayout>
-
-
-
-        </RadioGroup>
-
-
+        <Button
+            android:onClick="diagnostiquer"
+            android:layout_marginTop="4dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:text="Diagnostiquer"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:background="@drawable/button_file"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
+
 
 
 

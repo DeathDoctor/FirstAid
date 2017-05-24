@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -47,6 +49,11 @@ public class PreventionAccidentList extends AppCompatActivity {
         liste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+                animation1.setDuration(4000);
+                view.startAnimation(animation1);
+
                 TextView selectedAccident = (TextView) view.findViewById(R.id.prevention_nom_accident);
                 String nomAccident = selectedAccident.getText().toString();
 

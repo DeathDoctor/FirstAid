@@ -81,7 +81,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="4dp">
 
                     <RadioButton
                         android:id="@+id/orifice"
@@ -133,7 +134,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="4dp">
 
                     <RadioButton
                         android:id="@+id/peau_rouge"
@@ -179,7 +181,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="4dp">
 
                     <RadioButton
                         android:id="@+id/inf_paum"
@@ -221,7 +224,8 @@
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="4dp">
 
                     <RadioButton
                         android:id="@+id/chaleur"

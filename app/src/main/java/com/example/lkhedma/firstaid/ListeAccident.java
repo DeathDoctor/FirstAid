@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -49,6 +51,9 @@ public class ListeAccident extends AppCompatActivity {
         liste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+                animation1.setDuration(2000);
+                view.startAnimation(animation1);
                 TextView tct = (TextView) view.findViewById(R.id.nom_accident);
                 String nomm = tct.getText().toString();
 
@@ -65,6 +70,9 @@ public class ListeAccident extends AppCompatActivity {
 
                     case "Ingestion de produits caustiques":
                         intent = new Intent(ListeAccident.this, IngestionProduitCaustique.class);
+                        break;
+                    case "Inhalation":
+                        intent = new Intent(ListeAccident.this, Inhalation.class);
                         break;
                 }
                 startActivity(intent);

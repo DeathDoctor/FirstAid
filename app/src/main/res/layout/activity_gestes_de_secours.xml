@@ -5,28 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.lkhedma.firstaid.GestesDeSecoursBrulure">
+    tools:context="com.example.lkhedma.firstaid.GestesDeSecours">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="8dp">
 
         <TextView
-            android:layout_margin="12dp"
             android:id="@+id/txt"
-            android:layout_width="300dp"
+            android:layout_marginBottom="4dp"
+            android:padding="16dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="type brulure"
-            android:textSize="20sp"
+            android:text="DIAGNOSTIC"
+            android:textColor="@color/colorButtonNotPressed"
+            android:textSize="30sp"
             android:gravity="center"
-            android:background="@drawable/button_file_2"
+            android:background="@drawable/button_file"
             android:layout_gravity="center_horizontal"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Veuillez suivre les instruction induiqué ci-dessous"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
