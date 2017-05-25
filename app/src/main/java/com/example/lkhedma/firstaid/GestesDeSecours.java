@@ -33,6 +33,8 @@ public class GestesDeSecours extends AppCompatActivity {
             case "faible":
                 textView.setBackgroundColor(Color.parseColor("#00C853"));
                 break;
+            case "modere":
+                textView.setBackgroundColor(Color.parseColor("#FF9800"));
             case "grave":
                 textView.setBackgroundColor(Color.parseColor("#D32F2F"));
                 break;

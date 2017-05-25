@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FirstAid</string>
+    <string name="app_name">Be Khaïr</string>
     <string-array name="wilaya_array">
         <item>Oran</item>
         <item>Alger</item>

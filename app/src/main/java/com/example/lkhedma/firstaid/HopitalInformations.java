@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,12 +64,19 @@ public class HopitalInformations extends AppCompatActivity {
 
     public void appeler(View view) {
 
+        Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+        animation1.setDuration(2000);
+        view.startAnimation(animation1);
         Uri call = Uri.parse("tel:" + hopital.getNumero());
         Intent intent = new Intent(Intent.ACTION_DIAL, call);
         startActivity(intent);
     }
 
     public void map(View view) {
+
+        Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+        animation1.setDuration(2000);
+        view.startAnimation(animation1);
 
         double latt = Double.parseDouble(hopital.getLatt());
         double longt = Double.parseDouble(hopital.getLongt());

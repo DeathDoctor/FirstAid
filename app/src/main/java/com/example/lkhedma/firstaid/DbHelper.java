@@ -298,7 +298,7 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGesteSecour("@drawable/refroidir","Arroser rapidement à l’eau froide (10 et 15 degré) pendant 5 mn","Brulure grave",db);
         insertIntoGesteSecour("@drawable/retirer_vetement","Retirer les vêtements de l’enfant sans arracher ceux qui collent à la peau","Brulure grave",db);
         insertIntoGesteSecour("@drawable/allonger_enfant","Allonger l’enfant sur un drap propre","Brulure grave",db);
-        insertIntoGesteSecour("@drawable/appeler","Alerter les secours","Brulure grave",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours aussi vite que possible","Brulure grave",db);
         insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration, le pouls, jusqu’à l’arrivée des secours. ","Brulure grave",db);
 
         insertIntoGesteSecour("@drawable/immobiliser_fracture","Immobiliser ou empêcher de bouger : \n  Membre inférieur : caler le membre avec des vêtements, couverture, coussin dans la position où il se trouve","Traumatisme du membre",db);
@@ -309,17 +309,17 @@ public class DbHelper extends SQLiteOpenHelper {
 
         insertIntoGesteSecour("@drawable/pas_remettre_fracture","Ne jamais essayer de remettre en place l'articulation luxée, car on peut provoquer des lésions irréversibles. \n Immobiliser l'articulation dans la position où elle se trouve","Traumatisme du membre (luxation)",db);
         insertIntoGesteSecour("@drawable/appeler","Alerter les secours : pour réaliser une radiographie ","Traumatisme du membre (luxation)",db);
-        insertIntoGesteSecour("@drawable/suveillez_enfant","Surveiller l’enfant en attendant","Traumatisme du membre (luxation)",db);
+        insertIntoGesteSecour("@drawable/suveillez_enfant","Surveiller l’enfant en attendant...","Traumatisme du membre (luxation)",db);
 
         insertIntoGesteSecour("@drawable/chute_tete","Maintenez le blessé immobile et, aussi rapidement que possible, tenez sa tête en posant vos mains à plat de chaque côté. Grâce à ce maintien on évite tout mouvement de la colonne. De plus, la rectitude de l'axe tête-cou-tronc droit est ainsi conservée","Fracture vertébrale",db);
         insertIntoGesteSecour("@drawable/suveillez_enfant","Surveillez l’enfant jusqu'à l'arrivée des secours et prêtez attention à d'éventuels signes de gravité. ","Fracture vertébrale",db);
         insertIntoGesteSecour("@drawable/pls","En cas d'inconscience, positionnez prudemment la victime en position latérale de sécurité, malgré le risque de traumatisme liée à cette situation délicate","Fracture vertébrale",db);
 
         insertIntoGesteSecour("@drawable/allonger","Mettre la victime au repos en position allongée","Traumatisme cranien",db);
-        insertIntoGesteSecour("@drawable/appeler","Alerter les secours","Traumatisme cranien",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours rapidement","Traumatisme cranien",db);
         insertIntoGesteSecour("@drawable/pls","surveiller la conscience ; si la victime devient inconsciente, la mettre en position latérale de sécurité à condition que la respiration reste efficace","Traumatisme cranien",db);
 
-        insertIntoGesteSecour("@drawable/appeler","Alerter les secours","Ingestion de produits caustiques",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours immédiatement","Ingestion de produits caustiques",db);
         insertIntoGesteSecour("@drawable/pas_vomir","Ne pas faire boire","Ingestion de produits caustiques",db);
         insertIntoGesteSecour("@drawable/pas_boire","Ne pas faire vomir","Ingestion de produits caustiques",db);
         insertIntoGesteSecour("@drawable/pas_medicament","Ne pas donner d’antidotes\n" +

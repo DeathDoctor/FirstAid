@@ -35,41 +35,41 @@
             android:id="@+id/accident"
             android:text="Gestes de secours"
             android:textColor="@color/colorTextNotPressed"
-            android:textSize="20sp"
             android:onClick="accident"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
+            android:textSize="21sp"
+            android:layout_width="275dp"
+            android:layout_height="55dp"
             android:background="@drawable/button_file"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="15dp" />
 
             <Button
                 android:text="Guide pour prévention"
                 android:textColor="@color/colorTextNotPressed"
-                android:textSize="20sp"
                 android:onClick="guide"
-                android:layout_width="260dp"
-                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:layout_width="275dp"
+                android:layout_height="55dp"
                 android:background="@drawable/button_file"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="15dp" />
             <Button
                 android:text="Carte médicale"
                 android:textColor="@color/colorTextNotPressed"
-                android:textSize="20sp"
                 android:onClick="carte"
-                android:layout_width="260dp"
-                android:layout_height="50dp"
+                android:textSize="21sp"
+                android:layout_width="275dp"
+                android:layout_height="55dp"
                 android:background="@drawable/button_file"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="15dp" />
             <Button
                 android:text="Annuaire téléphonique"
                 android:onClick="contactL"
                 android:textColor="@color/colorTextNotPressed"
-                android:textSize="18sp"
-                android:layout_width="260dp"
-                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:layout_width="275dp"
+                android:layout_height="60dp"
                 android:background="@drawable/button_file"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="12dp" />
@@ -84,7 +84,7 @@
 
             <ImageView
                 android:layout_margin="10dp"
-                android:onClick="accident"
+                android:onClick="contactL"
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_call"
                 android:layout_width="70dp"
@@ -99,15 +99,15 @@
 
             <ImageView
                 android:layout_margin="10dp"
-                android:onClick="accident"
+                android:onClick="carte"
                 android:src="@drawable/icon_hopital"
                 android:layout_width="70dp"
                 android:layout_height="70dp" />
 
             <ImageView
                 android:layout_margin="10dp"
-                android:onClick="accident"
-                android:src="@drawable/flame"
+                android:onClick="guide"
+                android:src="@drawable/icon_home"
                 android:layout_width="70dp"
                 android:layout_height="70dp" />
 

@@ -39,19 +39,19 @@ public class Chute extends AppCompatActivity {
             if (s3.isChecked()){
 
                 diagnostique.setNom("Entorse");
-                diagnostique.setGravite("faible");
+                diagnostique.setGravite("modere");
 
             } else {
                 if (s2.isChecked()) {
 
                     diagnostique.setNom("Fracture déplacée");
-                    diagnostique.setGravite("faible");
+                    diagnostique.setGravite("modere");
 
                 } else {
 
                     if (s1.isChecked()){
                         diagnostique.setNom("Fracture non déplacée");
-                        diagnostique.setGravite("faible");
+                        diagnostique.setGravite("modere");
 
 
                     }
@@ -60,7 +60,7 @@ public class Chute extends AppCompatActivity {
         }
         if (s4.isChecked()) {
             diagnostique.setNom("Luxation");
-            diagnostique.setGravite("faible");
+            diagnostique.setGravite("modere");
         }
 
         if (s5.isChecked() || s6.isChecked() || s7.isChecked() || s8.isChecked()) {

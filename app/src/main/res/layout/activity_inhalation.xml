@@ -27,7 +27,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="110dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/icon_inhalation" />
 
@@ -69,14 +69,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/item3"
-                android:layout_marginRight="16dp">
+                android:layout_marginRight="16dp"
+                android:onClick="tousse">
 
                 <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/respire_pas"
+                    android:layout_width="180dp"
+                    android:layout_height="210dp"
                     android:layout_marginBottom="16dp"
-                    />
+                    android:src="@drawable/respire_pas" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -84,6 +84,7 @@
                     android:text="Enfant tousse"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"/>
 
@@ -93,13 +94,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/item3">
+                android:background="@drawable/item3"
+                android:onClick="respire_pas">
 
                 <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/tousse"
-                    android:layout_marginBottom="16dp"/>
+                    android:layout_width="180dp"
+                    android:layout_height="210dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/tousse" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -107,6 +109,7 @@
                     android:text="Enfant tousse"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"/>
 
@@ -116,16 +119,7 @@
 
         </LinearLayout>
 
-        <Button
-            android:onClick="diagnostiquer"
-            android:layout_marginTop="4dp"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:text="Diagnostiquer"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:background="@drawable/button_file"
-            android:layout_gravity="center_horizontal" />
+
 
     </LinearLayout>
 
