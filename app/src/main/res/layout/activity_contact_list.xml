@@ -51,7 +51,6 @@
             android:backgroundTint="@color/floating"
             android:clickable="true"
             app:fabSize="normal"
-            android:onClick="addContact"
             app:srcCompat="@drawable/add_contact" />
 
         <!--<Button-->

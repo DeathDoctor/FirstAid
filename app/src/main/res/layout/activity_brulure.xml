@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.lkhedma.firstaid.Brulure"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.example.lkhedma.firstaid.Brulure"-->
+    <!--android:paddingTop="16dp"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingLeft="8dp"-->
+    <!--android:paddingRight="8dp">-->
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:padding="4dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1"
             android:background="@drawable/item"
-            android:padding="16dp">
+            android:padding="10dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -51,15 +52,13 @@
             android:textColor="@android:color/black"
             android:layout_marginBottom="8dp"
             android:textSize="17sp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1" />
+            android:layout_marginTop="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/item"
-            android:layout_weight="1"
             android:layout_marginBottom="4dp">
 
             <LinearLayout
@@ -76,9 +75,11 @@
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
 
+
+
                 <RadioGroup
                     android:id="@+id/zone"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
                     android:orientation="horizontal"
@@ -131,7 +132,7 @@
 
                 <RadioGroup
                     android:id="@+id/peau"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
                     android:orientation="horizontal"
@@ -178,7 +179,7 @@
 
                 <RadioGroup
                     android:id="@+id/etendu"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
                     android:orientation="horizontal"
@@ -220,7 +221,7 @@
 
                 <RadioGroup
                     android:id="@+id/source"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
                     android:orientation="horizontal"
@@ -266,11 +267,10 @@
             android:textStyle="bold"
             android:textSize="20sp"
             android:background="@drawable/button_file"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"/>
+            android:layout_gravity="center_horizontal" />
 
 
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+<!--</android.support.constraint.ConstraintLayout>-->

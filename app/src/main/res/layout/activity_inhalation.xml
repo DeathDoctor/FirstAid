@@ -73,7 +73,7 @@
                 android:onClick="tousse">
 
                 <ImageView
-                    android:layout_width="180dp"
+                    android:layout_width="140dp"
                     android:layout_height="210dp"
                     android:layout_marginBottom="16dp"
                     android:src="@drawable/respire_pas" />
@@ -98,7 +98,7 @@
                 android:onClick="respire_pas">
 
                 <ImageView
-                    android:layout_width="180dp"
+                    android:layout_width="140dp"
                     android:layout_height="210dp"
                     android:layout_marginBottom="16dp"
                     android:src="@drawable/tousse" />

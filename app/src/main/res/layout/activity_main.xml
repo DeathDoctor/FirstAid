@@ -64,8 +64,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="15dp" />
             <Button
+                android:id="@+id/contactlist0"
                 android:text="Annuaire téléphonique"
-                android:onClick="contactL"
                 android:textColor="@color/colorTextNotPressed"
                 android:textSize="20sp"
                 android:layout_width="275dp"

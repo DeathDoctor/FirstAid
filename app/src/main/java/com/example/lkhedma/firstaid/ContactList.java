@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -20,13 +21,24 @@ public class ContactList extends AppCompatActivity {
     DbHelper dbHelper;
     Cursor cursor;
     ContactAdapter contactAdapter;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Liste des contacts");
         setContentView(R.layout.activity_contact_list);
 
+
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ContactList.this, NouveauContact.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
         listView = (ListView) findViewById(R.id.contacts_list);
         dbHelper = new DbHelper(this.getApplicationContext());
         contactAdapter = new ContactAdapter(this.getApplicationContext(), R.layout.item_contact_list);
@@ -68,9 +80,9 @@ public class ContactList extends AppCompatActivity {
 
     }
 
-    public void addContact(View view){
-        Intent intent = new Intent(ContactList.this, NouveauContact.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void addContact(View view){
+//        Intent intent = new Intent(ContactList.this, NouveauContact.class);
+//        startActivity(intent);
+//        finish();
+//    }
 }
