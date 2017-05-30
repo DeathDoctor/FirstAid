@@ -1,38 +1,73 @@
 package com.example.lkhedma.firstaid;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 
 public class Chute extends AppCompatActivity {
+
+    CheckBox s1;
+    CheckBox s2;
+    CheckBox s3;
+    CheckBox s4;
+    CheckBox s5;
+    CheckBox s6;
+    CheckBox s7;
+    CheckBox s8;
+    CheckBox s9;
+    CheckBox s10;
+    CheckBox s11;
+    CheckBox s12;
+    CheckBox s13;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Signes");
         setContentView(R.layout.activity_chute);
+        s1 = (CheckBox) findViewById(R.id.s1);
+        s2 = (CheckBox) findViewById(R.id.s2);
+        s3 = (CheckBox) findViewById(R.id.s3);
+        s4 = (CheckBox) findViewById(R.id.s4);
+        s5 = (CheckBox) findViewById(R.id.s5);
+        s6 = (CheckBox) findViewById(R.id.s6);
+        s7 = (CheckBox) findViewById(R.id.s7);
+        s8 = (CheckBox) findViewById(R.id.s8);
+        s9 = (CheckBox) findViewById(R.id.s9);
+        s10 = (CheckBox) findViewById(R.id.s10);
+        s11 = (CheckBox) findViewById(R.id.s11);
+        s12 = (CheckBox) findViewById(R.id.s12);
+        s13 = (CheckBox) findViewById(R.id.s13);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.urgence:
+                Uri call = Uri.parse("tel:" + "14");
+                Intent intent = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void diagnostiquer(View view) {
 
+
         Diagnostique diagnostique = new Diagnostique("Pas de traumatisme", "faible");
-
-
-        CheckBox s1 = (CheckBox) findViewById(R.id.s1);
-        CheckBox s2 = (CheckBox) findViewById(R.id.s2);
-        CheckBox s3 = (CheckBox) findViewById(R.id.s3);
-        CheckBox s4 = (CheckBox) findViewById(R.id.s4);
-        CheckBox s5 = (CheckBox) findViewById(R.id.s5);
-        CheckBox s6 = (CheckBox) findViewById(R.id.s6);
-        CheckBox s7 = (CheckBox) findViewById(R.id.s7);
-        CheckBox s8 = (CheckBox) findViewById(R.id.s8);
-        CheckBox s9 = (CheckBox) findViewById(R.id.s9);
-        CheckBox s10 = (CheckBox) findViewById(R.id.s10);
-        CheckBox s11 = (CheckBox) findViewById(R.id.s11);
-        CheckBox s12 = (CheckBox) findViewById(R.id.s12);
-        CheckBox s13 = (CheckBox) findViewById(R.id.s13);
 
 
         if (s3.isChecked() || s2.isChecked() || s1.isChecked()){

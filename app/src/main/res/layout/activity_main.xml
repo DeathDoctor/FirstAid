@@ -83,8 +83,9 @@
             android:background="@drawable/item3">
 
             <ImageView
+                android:id="@+id/annuairetel"
                 android:layout_margin="10dp"
-                android:onClick="contactL"
+                android:onClick="contact"
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_call"
                 android:layout_width="70dp"

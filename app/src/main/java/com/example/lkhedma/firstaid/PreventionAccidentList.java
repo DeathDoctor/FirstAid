@@ -3,8 +3,11 @@ package com.example.lkhedma.firstaid;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -25,6 +28,8 @@ public class PreventionAccidentList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prevention_accident_list);
+
+        setTitle("Méthodes de prévention contre : ");
 
         liste = (ListView) findViewById(R.id.liste_prevention_accident);
         dbHelper = new DbHelper(this.getApplicationContext());
@@ -66,5 +71,22 @@ public class PreventionAccidentList extends AppCompatActivity {
                 Toast.makeText(PreventionAccidentList.this, nomAccident, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.urgence:
+                Uri call = Uri.parse("tel:" + "14");
+                Intent intent = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

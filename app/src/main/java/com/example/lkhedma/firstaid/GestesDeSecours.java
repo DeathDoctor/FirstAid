@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class GestesDeSecours extends AppCompatActivity {
 
@@ -35,6 +37,7 @@ public class GestesDeSecours extends AppCompatActivity {
                 break;
             case "modere":
                 textView.setBackgroundColor(Color.parseColor("#FF9800"));
+                break;
             case "grave":
                 textView.setBackgroundColor(Color.parseColor("#D32F2F"));
                 break;
@@ -55,7 +58,7 @@ public class GestesDeSecours extends AppCompatActivity {
             case "Caustique fort (Base fort)":
             case "Caustique moyen (acide faible)":
             case "Diagnostic non identifié":
-                diagnostique = "Ingestion de produits caustiques";
+                diagnostique = "Intoxication";
                 break;
         }
 
@@ -77,7 +80,23 @@ public class GestesDeSecours extends AppCompatActivity {
                 gesteDeSecoursAdapter.add(gesteSecours);
             }while (cursor.moveToNext());
         }
-        Toast.makeText(this, diagnostique, Toast.LENGTH_SHORT).show();
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.urgence:
+                Uri call = Uri.parse("tel:" + "14");
+                Intent intent = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

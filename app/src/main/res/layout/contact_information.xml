@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/icon_contact"
+        android:layout_margin="12dp" />
+
+    <TextView
+        android:id="@+id/nom_dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom contact"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:textSize="28sp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/num_dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom contact"
+        android:textStyle="italic"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/spec_dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom contact"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:background="@drawable/item3"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="8dp"
+            android:onClick="appelerDia"
+            android:id="@+id/appel">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_call"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Appeler"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/supp">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/icon_delete"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Supprimer"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

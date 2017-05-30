@@ -35,17 +35,57 @@ public class NouveauContact extends AppCompatActivity {
 
     }
 
-    public void addContact(View view) {
-        db = new DbHelper(context);
-        sqLiteDatabase = db.getWritableDatabase();
-        Contact newContact = new Contact(nom.getText().toString(), Integer.parseInt(numero.getText().toString()), specification.getText().toString());
-        db.insertIntoContacts(newContact, sqLiteDatabase);
-        Toast.makeText(getBaseContext(),"Contact ajoute", Toast.LENGTH_LONG).show();
-        db.close();
-        Intent intent = new Intent(NouveauContact.this, ContactList.class);
-        startActivity(intent);
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
+    }
 
-        finish();
+    public boolean valid() {
+
+        boolean valid = true;
+        if(isEmpty(nom)){
+            nom.setError("Introduisez le nom");
+            valid = false;
+        }
+        if (isEmpty(numero)) {
+            numero.setError("Introduisez le numéro");
+            valid = false;
+        }
+        if (isEmpty(specification)) {
+            specification.setError("Introduisez la spécification");
+            valid = false;
+        }
+
+        return valid;
+
+    }
+
+    public void addContact(View view) {
+        if (valid()){
+
+            db = new DbHelper(context);
+            sqLiteDatabase = db.getWritableDatabase();
+            Contact newContact = new Contact(nom.getText().toString(), Integer.parseInt(numero.getText().toString()), specification.getText().toString());
+            db.insertIntoContacts(newContact, sqLiteDatabase);
+            Toast.makeText(getBaseContext(),"Contact ajoute", Toast.LENGTH_LONG).show();
+            db.close();
+            Intent intent = new Intent(NouveauContact.this, ContactList.class);
+            startActivity(intent);
+            finish();
+
+
+        }
+
+
+//        db = new DbHelper(context);
+//        sqLiteDatabase = db.getWritableDatabase();
+//        Contact newContact = new Contact(nom.getText().toString(), Integer.parseInt(numero.getText().toString()), specification.getText().toString());
+//        db.insertIntoContacts(newContact, sqLiteDatabase);
+//        Toast.makeText(getBaseContext(),"Contact ajoute", Toast.LENGTH_LONG).show();
+//        db.close();
+//        Intent intent = new Intent(NouveauContact.this, ContactList.class);
+//        startActivity(intent);
+//
+
     }
 
 

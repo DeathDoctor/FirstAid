@@ -109,7 +109,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         insertIntoAccidentEnum("Brulure", db);
         insertIntoAccidentEnum("Chute", db);
-        insertIntoAccidentEnum("Ingestion de produits caustiques", db);
+        insertIntoAccidentEnum("Intoxication", db);  // ingestion
         insertIntoAccidentEnum("Inhalation", db);
 
         insertIntoPreventionAccident("Etouffements", "@drawable/icon_inhalation", db);
@@ -272,8 +272,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         insertIntoAccident("T20 - T31", "Brulure", "@drawable/flame", db);
         insertIntoAccident("W00 - T19", "Chute", "@drawable/slide", db);
-        insertIntoAccident("A60 - A80", "Ingestion de produits caustiques", "@drawable/icon_ingestion", db);
-        insertIntoAccident("S80 - S96", "Inhalation", "@drawable/icon_inhalation", db);
+        insertIntoAccident("T509", "Intoxication", "@drawable/icon_ingestion", db); // ingestion
+        insertIntoAccident("J690", "Inhalation", "@drawable/icon_inhalation", db);
 
 
         inserIntoDiagnostique("Brulure grave", "grave", db);
@@ -284,7 +284,7 @@ public class DbHelper extends SQLiteOpenHelper {
         inserIntoDiagnostique("Fracture vertébrale", "grave", db);
         inserIntoDiagnostique("Traumatisme cranien", "grave", db);
 
-        inserIntoDiagnostique("Ingestion de produits caustiques", "faible", db);
+        inserIntoDiagnostique("Intoxication", "faible", db);  // ingestion
 
         inserIntoDiagnostique("Enfant tousse", "faible", db);
         inserIntoDiagnostique("Enfant ne respire pas", "grave", db);
@@ -299,7 +299,7 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGesteSecour("@drawable/retirer_vetement","Retirer les vêtements de l’enfant sans arracher ceux qui collent à la peau","Brulure grave",db);
         insertIntoGesteSecour("@drawable/allonger_enfant","Allonger l’enfant sur un drap propre","Brulure grave",db);
         insertIntoGesteSecour("@drawable/appeler","Alerter les secours aussi vite que possible","Brulure grave",db);
-        insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration, le pouls, jusqu’à l’arrivée des secours. ","Brulure grave",db);
+        insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration, le pouls, jusqu’à l’arrivée des secours","Brulure grave",db);
 
         insertIntoGesteSecour("@drawable/immobiliser_fracture","Immobiliser ou empêcher de bouger : \n  Membre inférieur : caler le membre avec des vêtements, couverture, coussin dans la position où il se trouve","Traumatisme du membre",db);
         insertIntoGesteSecour("@drawable/membre_inf","Membre supérieur : caler à l’aide de vêtement, triangle de toile voir figures ","Traumatisme du membre",db);
@@ -319,13 +319,13 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGesteSecour("@drawable/appeler","Alerter les secours rapidement","Traumatisme cranien",db);
         insertIntoGesteSecour("@drawable/pls","surveiller la conscience ; si la victime devient inconsciente, la mettre en position latérale de sécurité à condition que la respiration reste efficace","Traumatisme cranien",db);
 
-        insertIntoGesteSecour("@drawable/appeler","Alerter les secours immédiatement","Ingestion de produits caustiques",db);
-        insertIntoGesteSecour("@drawable/pas_vomir","Ne pas faire boire","Ingestion de produits caustiques",db);
-        insertIntoGesteSecour("@drawable/pas_boire","Ne pas faire vomir","Ingestion de produits caustiques",db);
+        insertIntoGesteSecour("@drawable/appeler","Alerter les secours immédiatement","Intoxication",db);  //ingestion
+        insertIntoGesteSecour("@drawable/pas_vomir","Ne pas faire boire","Intoxication",db);
+        insertIntoGesteSecour("@drawable/pas_boire","Ne pas faire vomir","Intoxication",db);
         insertIntoGesteSecour("@drawable/pas_medicament","Ne pas donner d’antidotes\n" +
                 "Ni de pansement gastrique\n" +
-                "ou faire lavage gastrique ","Ingestion de produits caustiques",db);
-        insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration et le pouls, jusqu’à l’arrivée des secours","Ingestion de produits caustiques",db);
+                "ou faire lavage gastrique ","Intoxication",db);
+        insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration et le pouls, jusqu’à l’arrivée des secours","Intoxication",db);
 
 
         insertIntoGesteSecour("@drawable/bouche_enfant","ne pas suspendre l’enfant par les pieds \n ne pas introduire les doigts dans la bouche de l’enfant ","Enfant tousse",db);
@@ -452,6 +452,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+
     public Cursor getAllHospitals(SQLiteDatabase db) {
         Cursor cursor;
         String[] projections = {FirstAidManager.HopitalManager.HOPITAL_PHOTO,
@@ -460,6 +461,11 @@ public class DbHelper extends SQLiteOpenHelper {
                                 FirstAidManager.HopitalManager.HOPITAL_NUMERO};
         cursor = db.query(FirstAidManager.HopitalManager.HOPITAL_TABLE_NAME, projections, null, null, null, null, null);
         return cursor;
+    }
+
+    public void deleteContact(SQLiteDatabase db,String name) {
+        db.delete(FirstAidManager.ContactManager.CONTACT_TABLE_NAME, FirstAidManager.ContactManager.NOM_CONTACT+"=?", new String[]{name});
+
     }
 
     public Cursor getGestesDeSecours(SQLiteDatabase db, String requete, String diagnostique) {

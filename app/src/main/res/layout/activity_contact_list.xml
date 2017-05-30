@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_centerHorizontal="true"
-            android:layout_above="@+id/ajouter_contact"
             android:layout_margin="8dp"
             android:id="@+id/linearLayout2">
 

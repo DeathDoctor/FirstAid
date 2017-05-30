@@ -48,7 +48,7 @@
              android:id="@+id/textView"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="Veuillez selectionner les signes observes :"
+             android:text="Veuillez sélectionner les signes observés :"
              android:textColor="@android:color/black"
              android:layout_marginBottom="8dp"
              android:textSize="17sp"
@@ -97,7 +97,7 @@
                      android:id="@+id/s4"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="articulation déformé et gonflé"
+                     android:text="articulation déformée et gonflée"
                      android:textSize="16sp"
                      android:layout_marginBottom="4dp"/>
 
@@ -147,7 +147,7 @@
                      android:id="@+id/s9"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="plaie ou bosse sur la tete"
+                     android:text="plaie ou bosse sur la tête"
                      android:textSize="16sp"
                      android:layout_marginBottom="4dp"/>
 
@@ -155,7 +155,7 @@
                      android:id="@+id/s10"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="maux de tete inhabituels"
+                     android:text="maux de tête inhabituels"
                      android:textSize="16sp"
                      android:layout_marginBottom="4dp"/>
 

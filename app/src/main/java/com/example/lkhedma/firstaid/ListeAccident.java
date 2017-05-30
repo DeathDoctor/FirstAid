@@ -3,9 +3,12 @@ package com.example.lkhedma.firstaid;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -55,11 +58,11 @@ public class ListeAccident extends AppCompatActivity {
                 animation1.setDuration(2000);
                 view.startAnimation(animation1);
                 TextView tct = (TextView) view.findViewById(R.id.nom_accident);
-                String nomm = tct.getText().toString();
+                String nomAccident = tct.getText().toString();
 
                 Intent intent = null;
 
-                switch (nomm) {
+                switch (nomAccident) {
                     case "Brulure":
                         intent = new Intent(ListeAccident.this, Brulure.class);
                         break;
@@ -68,18 +71,36 @@ public class ListeAccident extends AppCompatActivity {
                         intent = new Intent(ListeAccident.this, Chute.class);
                         break;
 
-                    case "Ingestion de produits caustiques":
-                        intent = new Intent(ListeAccident.this, IngestionProduitCaustique.class);
+                    case "Intoxication":
+                        intent = new Intent(ListeAccident.this, Intoxication.class);
                         break;
                     case "Inhalation":
                         intent = new Intent(ListeAccident.this, Inhalation.class);
                         break;
                 }
+
                 startActivity(intent);
 
-                Log.e("hadi", nomm);
+                Log.e("hadi", nomAccident);
             }
         });
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.urgence:
+                Uri call = Uri.parse("tel:" + "14");
+                Intent intent = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

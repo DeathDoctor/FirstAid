@@ -47,7 +47,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Veuillez selectionner les signes observes :"
+            android:text="Veuillez sélectionner les signes observés :"
             android:textColor="@android:color/black"
             android:layout_marginBottom="8dp"
             android:textSize="17sp"
@@ -70,21 +70,24 @@
                 android:orientation="vertical"
                 android:background="@drawable/item3"
                 android:layout_marginRight="16dp"
-                android:onClick="tousse">
+                android:onClick="respire_pas">
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="210dp"
-                    android:layout_marginBottom="16dp"
-                    android:src="@drawable/respire_pas" />
+                    android:src="@drawable/respire_pas"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
+                    android:gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enfant tousse"
+                    android:text="Enfant ne \n respire pas"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:paddingRight="2dp"
+                    android:paddingLeft="2dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"/>
 
@@ -95,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/item3"
-                android:onClick="respire_pas">
+                android:onClick="tousse">
 
                 <ImageView
                     android:layout_width="140dp"

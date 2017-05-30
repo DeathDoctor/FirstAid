@@ -10,6 +10,13 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <supports-screens
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:normalScreens="true"
+        android:anyDensity="true"/>
 
     <application
         android:allowBackup="true"
@@ -31,9 +38,8 @@
         <activity android:name=".Brulure" />
         <activity android:name=".Chute" />
         <activity android:name=".GestesDeSecours" />
-        <activity android:name=".IngestionProduitCaustique" />
+        <activity android:name=".Intoxication" />
         <activity android:name=".ContactList" />
-        <activity android:name=".Guide" />
         <activity android:name=".PreventionAccidentList" />
         <activity android:name=".PreventionInstructionList" />
         <activity android:name=".HopitauxListe" />
