@@ -64,7 +64,7 @@ public class NouveauContact extends AppCompatActivity {
 
             db = new DbHelper(context);
             sqLiteDatabase = db.getWritableDatabase();
-            Contact newContact = new Contact(nom.getText().toString(), Integer.parseInt(numero.getText().toString()), specification.getText().toString());
+            Contact newContact = new Contact(nom.getText().toString(), numero.getText().toString(), specification.getText().toString());
             db.insertIntoContacts(newContact, sqLiteDatabase);
             Toast.makeText(getBaseContext(),"Contact ajoute", Toast.LENGTH_LONG).show();
             db.close();

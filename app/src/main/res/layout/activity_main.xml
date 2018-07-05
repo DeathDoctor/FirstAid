@@ -17,8 +17,8 @@
         android:padding="4dp">
 
         <ImageView
-            android:layout_width="250dp"
-            android:layout_height="203dp"
+            android:layout_width="229dp"
+            android:layout_height="191dp"
             android:text="First Aid"
             android:src="@drawable/app_logo_png"
             android:layout_gravity="center_horizontal"
@@ -36,9 +36,9 @@
             android:text="Gestes de secours"
             android:textColor="@color/colorTextNotPressed"
             android:onClick="accident"
-            android:textSize="21sp"
-            android:layout_width="275dp"
-            android:layout_height="55dp"
+            android:textSize="18sp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
             android:background="@drawable/button_file"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="15dp" />
@@ -47,9 +47,9 @@
                 android:text="Guide pour prévention"
                 android:textColor="@color/colorTextNotPressed"
                 android:onClick="guide"
-                android:textSize="20sp"
-                android:layout_width="275dp"
-                android:layout_height="55dp"
+                android:textSize="18sp"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
                 android:background="@drawable/button_file"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="15dp" />
@@ -57,9 +57,9 @@
                 android:text="Carte médicale"
                 android:textColor="@color/colorTextNotPressed"
                 android:onClick="carte"
-                android:textSize="21sp"
-                android:layout_width="275dp"
-                android:layout_height="55dp"
+                android:textSize="18sp"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
                 android:background="@drawable/button_file"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="15dp" />
@@ -67,20 +67,21 @@
                 android:id="@+id/contactlist0"
                 android:text="Annuaire téléphonique"
                 android:textColor="@color/colorTextNotPressed"
-                android:textSize="20sp"
-                android:layout_width="275dp"
-                android:layout_height="60dp"
+                android:textSize="17sp"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
                 android:background="@drawable/button_file"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="12dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/item3">
+            android:background="@drawable/item3"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/annuairetel"
@@ -88,29 +89,29 @@
                 android:onClick="contact"
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_call"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
 
             <ImageView
                 android:layout_margin="10dp"
                 android:onClick="accident"
                 android:src="@drawable/icon_geste_secour"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
 
             <ImageView
                 android:layout_margin="10dp"
                 android:onClick="carte"
                 android:src="@drawable/icon_hopital"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
 
             <ImageView
                 android:layout_margin="10dp"
                 android:onClick="guide"
                 android:src="@drawable/icon_home"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
 
 
         </LinearLayout>

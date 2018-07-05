@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.lkhedma.firstaid.Intoxication"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -29,8 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_ingestion"
-                android:layout_marginBottom="16dp"/>
+                android:src="@drawable/icon_ingestion" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,7 +39,7 @@
                 android:text="Intoxication"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="34sp" />
 
         </LinearLayout>
 
@@ -51,8 +50,8 @@
             android:text="Veuillez sélectionner les signes observés :"
             android:textColor="@android:color/black"
             android:layout_marginBottom="8dp"
-            android:textSize="17sp"
-            android:layout_marginTop="8dp" />
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"  />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,7 +59,7 @@
             android:orientation="vertical"
             android:background="@drawable/item"
             android:layout_marginBottom="4dp"
-            android:padding="6dp"
+            android:paddingTop="14dp"
 
             android:layout_gravity="center_horizontal">
 
@@ -69,19 +68,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_gravity="center_vertical"
-                android:gravity="left"
-                android:layout_weight="1">
+                android:gravity="left">
 
                 <RadioButton
                     android:id="@+id/acide_fort"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Esprit de sel, liquide de batterie, détartrant WC, antirouille ou désinfectant"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="6dp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"
                     android:checked="true"/>
 
                 <RadioButton
@@ -89,27 +86,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Eau de javel, agent de blanchissemment ou lessive pour machine à laver la vaisselle"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="6dp"/>
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"/>
 
                 <RadioButton
                     android:id="@+id/acide_faible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Déboucheurs,  Pile bouton ou Détergent ménager"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="6dp"/>
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"/>
 
                 <RadioButton
                     android:id="@+id/autres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Autres"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="6dp"/>
+                    android:textSize="14sp"
+                    android:layout_marginBottom="2dp"/>
 
             </RadioGroup>
 
@@ -117,14 +111,14 @@
 
         <Button
             android:onClick="diagnostiquer"
-            android:layout_marginTop="4dp"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="240dp"
+            android:layout_height="55dp"
             android:text="Diagnostiquer"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:background="@drawable/button_file"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"  />
 
     </LinearLayout>
 

@@ -14,10 +14,10 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:paddingTop="20dp"
-    android:paddingBottom="20dp"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
         <LinearLayout
@@ -25,10 +25,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/item"
-            android:padding="10dp">
+            android:padding="4dp">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_margin="6dp"
+                android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/flame" />
@@ -40,7 +41,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Brulure"
                 android:textColor="@android:color/black"
-                android:textSize="50sp" />
+                android:textSize="34sp" />
 
         </LinearLayout>
 
@@ -50,9 +51,9 @@
             android:layout_height="wrap_content"
             android:text="Veuillez sélectionner les signes observés :"
             android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp"
-            android:textSize="17sp"
-            android:layout_marginTop="8dp" />
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,14 +65,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="4dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
                     android:text="Zone:"
+                    android:textSize="13sp"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
 
@@ -89,26 +91,34 @@
                         android:id="@+id/orifice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Orifice naturel" />
+                        android:text="Orifice naturel"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                     <RadioButton
                         android:id="@+id/visage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Visage" />
+                        android:text="Visage"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                     <RadioButton
                         android:id="@+id/mains"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mains"
-                        android:checked="true"/>
+                        android:checked="true"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                     <RadioButton
                         android:id="@+id/autres"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Autres" />
+                        android:text="Autres"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                 </RadioGroup>
 
@@ -117,15 +127,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="0dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="13sp"
                     android:text="Peau ? :"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
@@ -143,19 +152,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Peau rouge"
-                        android:checked="true"/>
+                        android:checked="true"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                     <RadioButton
                         android:id="@+id/cloques"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cloques" />
+                        android:text="Cloques"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                     <RadioButton
                         android:id="@+id/peau_noir"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Peau noir" />
+                        android:text="Peau noir"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                 </RadioGroup>
 
@@ -164,15 +179,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="5dp"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="0dp">
+                android:orientation="vertical" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="4dp"
                     android:text="Etendu de la brulure:"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
@@ -190,13 +205,17 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:text="Inférieur à la paume de l'enfant"
-                        android:checked="true"/>
+                        android:checked="true"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
                     <RadioButton
                         android:id="@+id/sup_paum"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:text="Supérieur à la paume de l'enfant" />
+                        android:text="Supérieur à la paume de l'enfant"
+                        android:layout_weight="1"
+                        android:textSize="12sp"/>
 
 
                 </RadioGroup>
@@ -206,13 +225,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="2dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="13sp"
                     android:text="Cause: "
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
@@ -223,33 +244,40 @@
                     android:layout_height="wrap_content"
                     android:alwaysDrawnWithCache="false"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="5dp"
                     android:paddingLeft="4dp">
 
                     <RadioButton
                         android:id="@+id/chaleur"
-                        android:layout_width="105dp"
-                        android:layout_height="40dp"
-                        android:text="Chaleur(feu,vapeur)"
-                        android:checked="true"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Chaleur"
+                        android:checked="true"
+                        android:layout_weight="1"/>
 
                     <RadioButton
                         android:id="@+id/electricite"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Électricité" />
+                        android:text="Électricité"
+                        android:textSize="12sp"
+                        android:layout_weight="1"/>
 
                     <RadioButton
                         android:id="@+id/chimique"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Chimique" />
+                        android:text="Chimique"
+                        android:textSize="12sp"
+                        android:layout_weight="1"/>
 
                     <RadioButton
                         android:id="@+id/liquide"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Liquide" />
+                        android:text="Liquide"
+                        android:textSize="12sp"
+                        android:layout_weight="1"/>
 
                 </RadioGroup>
 
@@ -258,12 +286,12 @@
 
         <Button
             android:onClick="diagnostiquer"
-            android:layout_marginTop="4dp"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
+            android:layout_marginTop="6dp"
+            android:layout_width="240dp"
+            android:layout_height="55dp"
             android:text="Diagnostiquer"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:background="@drawable/button_file"
             android:layout_gravity="center_horizontal" />
 

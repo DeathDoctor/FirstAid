@@ -7,10 +7,10 @@ package com.example.lkhedma.firstaid;
 public class Contact {
 
     private String nom;
-    private int numero;
+    private String numero;
     private String specification;
 
-    public Contact(String nom, int numero, String specification) {
+    public Contact(String nom, String numero, String specification) {
         this.nom = nom;
         this.numero = numero;
         this.specification = specification;
@@ -24,11 +24,11 @@ public class Contact {
         this.nom = nom;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

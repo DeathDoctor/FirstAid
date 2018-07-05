@@ -20,7 +20,7 @@ public class DbHelper extends SQLiteOpenHelper {
             "(" +
             " "+FirstAidManager.ContactManager.ID_CONTACT+" INTEGER PRIMARY KEY AUTOINCREMENT," +
             " "+FirstAidManager.ContactManager.NOM_CONTACT+" TEXT," +
-            " "+FirstAidManager.ContactManager.NUMERO_CONTACT+" INTEGER," +
+            " "+FirstAidManager.ContactManager.NUMERO_CONTACT+" TEXT," +
             " "+FirstAidManager.ContactManager.SPECIFICATION_CONTACT+" TEXT" +
             ");";
 
@@ -105,32 +105,36 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(CREAT_HOPITAL);
 
         Log.e("DB", "All tables created");
-        insertIntoContacts(new Contact("pompiers", 14, "urgence"), db);
+        insertIntoContacts(new Contact("Pompiers", "14", "urgence"), db);
+        insertIntoContacts(new Contact("SAMU Oran", "041403131", "urgence"), db);
+        insertIntoContacts(new Contact("SAMU Alger", "3016", "urgence"), db);
+        insertIntoContacts(new Contact("Police", "17", "urgence"), db);
+        insertIntoContacts(new Contact("Protection Civile", "041413400", "urgence"), db);
 
         insertIntoAccidentEnum("Brulure", db);
         insertIntoAccidentEnum("Chute", db);
         insertIntoAccidentEnum("Intoxication", db);  // ingestion
         insertIntoAccidentEnum("Inhalation", db);
 
-        insertIntoPreventionAccident("Etouffements", "@drawable/icon_inhalation", db);
+        insertIntoPreventionAccident("Étouffements", "@drawable/icon_inhalation", db);
         insertIntoPreventionAccident("Noyades", "@drawable/icon_noyade", db);
         insertIntoPreventionAccident("Chutes", "@drawable/slide", db);
         insertIntoPreventionAccident("Brulures", "@drawable/flame", db);
-        insertIntoPreventionAccident("Electrocutions", "@drawable/icon_electrocution", db);
+        insertIntoPreventionAccident("Électrocutions", "@drawable/icon_electrocution", db);
         insertIntoPreventionAccident("Intoxications", "@drawable/icon_intox", db);
 
 
         // AJOUT DES PREVENTIONS POUR ETOUFFEMENTS
 
-        insertIntoPreventionInstruction(db, "Etouffements", "Les petits objets et petits aliments", "Ne laissez pas de petits objets ou de petits aliments à la portée de votre enfant","@drawable/p_etouf1", "@drawable/p_etouf2",
+        insertIntoPreventionInstruction(db, "Étouffements", "Les petits objets et petits aliments", "Ne laissez pas de petits objets ou de petits aliments à la portée de votre enfant","@drawable/p_etouf1", "@drawable/p_etouf2",
                         "• Ne laissez pas à portée de votre enfant : pièces de monnaie, billes, bonbons, petits jouets, aliments (olives, cacahuètes...), piles, capuchons de stylos, barrettes à cheveux... \n" +
                         "• Ne laissez pas de médicaments dans un sac à main, sur une table... \n " +
                         "• Surveillez votre enfant pendant ses repas et lorsqu'il joue. ");
 
-        insertIntoPreventionInstruction(db, "Etouffements", "Les sacs en plastiques et d'autres risques d'étouffement", "Mettez les sacs en plastique hors de portée de votre enfant","@drawable/p_etouf3", "@drawable/p_etouf4",
+        insertIntoPreventionInstruction(db, "Étouffements", "Les sacs en plastiques et d'autres risques d'étouffement", "Mettez les sacs en plastique hors de portée de votre enfant","@drawable/p_etouf3", "@drawable/p_etouf4",
                         "• Rangez les sacs en plastique hors de portée de votre enfant.");
 
-        insertIntoPreventionInstruction(db, "Etouffements", "Dans son lit", "Couchez votre enfant en toute sécurité","@drawable/p_etouf5", "@drawable/p_etouf6",
+        insertIntoPreventionInstruction(db, "Étouffements", "Dans son lit", "Couchez votre enfant en toute sécurité","@drawable/p_etouf5", "@drawable/p_etouf6",
                         "• Couchez votre enfant sur le dos, toujours seul dans son lit.\n" +
                         "• N’utilisez pas d’oreiller, de couverture ou de couette.  \n " +
                         "• Utilisez un lit rigide et profond, un matelas ferme adapté à la taille du lit et conforme aux exigences de sécurité.\n" +
@@ -221,10 +225,10 @@ public class DbHelper extends SQLiteOpenHelper {
                         " Testez la température en faisant couler quelques gouttes sur l'intérieur de votre avant-bras.");
 
         insertIntoPreventionInstruction(db, "Brulures", "Les flammes et incendies", "Mettez hors de portée les objets risquant de brûler votre enfant ou de provoquer un incendie","@drawable/p_brul7", "@drawable/p_brul8",
-                        "• •\tNe laissez pas d’allumettes et de briquets à la portée de votre enfant.  \n" +
-                        "• •\tNe laissez jamais de bougies allumées à portée des enfants.  \n " +
-                        "• •\tNe laissez pas votre enfant s'approcher d'une cheminée ou d'un barbecue.  \n"+
-                        "• •\tN’allumez jamais une cheminée ou un barbecue avec de l’alcool. \n"+
+                        "• Ne laissez pas d’allumettes et de briquets à la portée de votre enfant.  \n" +
+                        "• Ne laissez jamais de bougies allumées à portée des enfants.  \n " +
+                        "• Ne laissez pas votre enfant s'approcher d'une cheminée ou d'un barbecue.  \n"+
+                        "• N’allumez jamais une cheminée ou un barbecue avec de l’alcool. \n"+
                         "• Ne fumez pas en présence de votre enfant. \n"+
                         "•Faites vérifier vos installations électriques et de chauffage.");
 
@@ -232,24 +236,24 @@ public class DbHelper extends SQLiteOpenHelper {
 
         // AJOUT DES PREVENTIONS POUR ELECTROCUTIONS
 
-        insertIntoPreventionInstruction(db, "Electrocutions", "Les prises et les fils électriques", "Equipez vos prises de dispositifs de sécurité","@drawable/p_elec1", "@drawable/p_elec2",
+        insertIntoPreventionInstruction(db, "Électrocutions", "Les prises et les fils électriques", "Equipez vos prises de dispositifs de sécurité","@drawable/p_elec1", "@drawable/p_elec2",
                         "• Apprenez à votre enfant à ne pas toucher ou jouer avec les prises de courant. \n" +
                         "• Faites installer des prises à éclipse ou des cache-prises à ventouse ou à clé \n " +
                         "• Ne laissez pas de rallonge électrique branchée. \n"+
                         "• Ne surchargez pas vos prises électriques avec des multiprises.");
 
-        insertIntoPreventionInstruction(db, "Electrocutions", "Les appareils électriques", "Évitez d’utiliser un appareil électrique en présence d’eau","@drawable/p_elec3", "@drawable/p_elec4",
+        insertIntoPreventionInstruction(db, "Électrocutions", "Les appareils électriques", "Évitez d’utiliser un appareil électrique en présence d’eau","@drawable/p_elec3", "@drawable/p_elec4",
                         "• N'ouvrez jamais l'eau du robinet à proximité d'un appareil électrique en marche. \n" +
                         " Débranchez et rangez tous les appareils électriques dès que vous avez fini de les utiliser : sèche-cheveux, rasoir électrique, appareil d'épilation, chauffage mobile, fer à repasser... ");
 
-        insertIntoPreventionInstruction(db, "Electrocutions", "Les installations", "Faites vérifier vos installations électriques","@drawable/p_elec5", "@drawable/p_elec6",
+        insertIntoPreventionInstruction(db, "Électrocutions", "Les installations", "Faites vérifier vos installations électriques","@drawable/p_elec5", "@drawable/p_elec6",
                         "• Ne laissez jamais de fils électriques dénudés.  \n" +
                         "• Faites vérifier vos installations : prises, interrupteurs...  \n " +
                         "• Faites installer, si possible, un système qui coupe le courant au moindre court-circuit (disjoncteur différentiel à haute sensibilité). ");
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        insertIntoHopital(db, "EHU 1er Novembre", "@drawable/photo_hopital_ehu", "Oran", "Usto Hai Essabah", "0798 81 75 07", "ehuoran.dz", "35.700257", "-0.582876");
+        insertIntoHopital(db, "EHU 1er Novembre", "@drawable/photo_hopital_ehu", "Oran", "Usto Hai Essabah", "041 42 14 06", "ehuoran.dz", "35.700257", "-0.582876");
         insertIntoHopital(db, "Centre Hospitalier et Universitaire d'Oran", "@drawable/photo_hopital_hospitalieruniversitaire", "Oran", "Boulevard Doctor Benzerdjeb", "041 41 22 38", "sante.dz", "35.694615", "-0.641152");
         insertIntoHopital(db, "Clinique Cherrak El Ghosli", "@drawable/photo_hopital_ghosli", "Oran", "Ibn Sina (Ex Delmonte)", "041 46 90 90", "cliniquecherrak.com", "35.693052", "-0.627057");
         insertIntoHopital(db, "Hopital pédiatrique de Canastel", "@drawable/photo_hopital_canastel", "Oran", "Canastel", "041 65 40 78", "Aucun site disponible", "35.738313", "-0.573346");
@@ -301,6 +305,8 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGesteSecour("@drawable/appeler","Alerter les secours aussi vite que possible","Brulure grave",db);
         insertIntoGesteSecour("@drawable/respiration","Surveiller la conscience, la respiration, le pouls, jusqu’à l’arrivée des secours","Brulure grave",db);
 
+        insertIntoGesteSecour("@drawable/suveillez_enfant","Surveiller l’enfant pendant 24H","Pas de traumatisme",db);
+
         insertIntoGesteSecour("@drawable/immobiliser_fracture","Immobiliser ou empêcher de bouger : \n  Membre inférieur : caler le membre avec des vêtements, couverture, coussin dans la position où il se trouve","Traumatisme du membre",db);
         insertIntoGesteSecour("@drawable/membre_inf","Membre supérieur : caler à l’aide de vêtement, triangle de toile voir figures ","Traumatisme du membre",db);
         insertIntoGesteSecour("@drawable/compression","En cas de fracture ouverte recouvrir la plaie avec des compresses stériles ","Traumatisme du membre",db);
@@ -320,8 +326,8 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGesteSecour("@drawable/pls","surveiller la conscience ; si la victime devient inconsciente, la mettre en position latérale de sécurité à condition que la respiration reste efficace","Traumatisme cranien",db);
 
         insertIntoGesteSecour("@drawable/appeler","Alerter les secours immédiatement","Intoxication",db);  //ingestion
-        insertIntoGesteSecour("@drawable/pas_vomir","Ne pas faire boire","Intoxication",db);
-        insertIntoGesteSecour("@drawable/pas_boire","Ne pas faire vomir","Intoxication",db);
+        insertIntoGesteSecour("@drawable/pas_vomir","Ne pas faire vomir","Intoxication",db);
+        insertIntoGesteSecour("@drawable/pas_boire","Ne pas faire boire","Intoxication",db);
         insertIntoGesteSecour("@drawable/pas_medicament","Ne pas donner d’antidotes\n" +
                 "Ni de pansement gastrique\n" +
                 "ou faire lavage gastrique ","Intoxication",db);

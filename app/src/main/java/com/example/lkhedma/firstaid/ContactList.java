@@ -55,10 +55,10 @@ public class ContactList extends AppCompatActivity {
 
         if (cursor.moveToNext()) {
             do {
-                String nom, specification;
-                int num;
+                String nom,num, specification;
+
                 nom = cursor.getString(0);
-                num = cursor.getInt(1);
+                num = cursor.getString(1);
                 specification = cursor.getString(2);
 
                 Contact contact = new Contact(nom, num, specification);

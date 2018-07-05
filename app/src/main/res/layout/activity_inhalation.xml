@@ -5,16 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.lkhedma.firstaid.Inhalation"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
         android:orientation="vertical"
         android:padding="4dp">
 
@@ -22,12 +20,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item"
-            android:padding="16dp">
+            android:background="@drawable/item">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_margin="6dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/icon_inhalation" />
 
@@ -39,7 +37,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Inhalation"
                 android:textColor="@android:color/black"
-                android:textSize="50sp" />
+                android:textSize="34sp" />
 
         </LinearLayout>
 
@@ -50,19 +48,16 @@
             android:text="Veuillez sélectionner les signes observés :"
             android:textColor="@android:color/black"
             android:layout_marginBottom="8dp"
-            android:textSize="17sp"
+            android:textSize="16sp"
             android:layout_marginTop="8dp"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="280dp"
             android:orientation="horizontal"
             android:background="@drawable/item"
-            android:layout_weight="1"
-            android:layout_marginBottom="4dp"
-            android:gravity="center"
-            android:padding="12dp">
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -74,7 +69,7 @@
 
                 <ImageView
                     android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_height="180dp"
                     android:src="@drawable/respire_pas"
                     android:layout_gravity="center_horizontal"/>
 
@@ -102,7 +97,7 @@
 
                 <ImageView
                     android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_height="180dp"
                     android:layout_marginBottom="16dp"
                     android:src="@drawable/tousse" />
 

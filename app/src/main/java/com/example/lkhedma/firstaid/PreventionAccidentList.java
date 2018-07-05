@@ -29,7 +29,7 @@ public class PreventionAccidentList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prevention_accident_list);
 
-        setTitle("Méthodes de prévention contre : ");
+        setTitle("Prévention contre les : ");
 
         liste = (ListView) findViewById(R.id.liste_prevention_accident);
         dbHelper = new DbHelper(this.getApplicationContext());
