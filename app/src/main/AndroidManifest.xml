@@ -11,39 +11,63 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="true"
-        android:normalScreens="true"
-        android:anyDensity="true"/>
+        android:xlargeScreens="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_logo_png"
         android:label="@string/app_name"
+        android:largeHeap="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:largeHeap="false">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListeAccident" />
-        <activity android:name=".NouveauContact" />
-        <activity android:name=".Brulure" />
-        <activity android:name=".Chute" />
-        <activity android:name=".GestesDeSecours" />
-        <activity android:name=".Intoxication" />
-        <activity android:name=".ContactList" />
-        <activity android:name=".PreventionAccidentList" />
-        <activity android:name=".PreventionInstructionList" />
-        <activity android:name=".HopitauxListe" />
-        <activity android:name=".HopitalInformations" />
+        <activity
+            android:name=".ListeAccident"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NouveauContact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Brulure"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Chute"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GestesDeSecours"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Intoxication"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContactList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PreventionAccidentList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PreventionInstructionList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HopitauxListe"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HopitalInformations"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -52,14 +76,18 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".Inhalation"></activity>
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Inhalation"
+            android:screenOrientation="portrait"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>
